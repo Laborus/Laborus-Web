@@ -1,0 +1,135 @@
+
+.sidebar-right {
+    width: 400px;
+    background-color: var(--neutral-100);
+    padding: 22px;
+  }
+  
+  .campus-metrics {
+    padding: 14px;
+    border: 1px solid var(--neutral-400);
+    border-radius: 24px;
+    text-align: left;
+  }
+  
+  .campus-metrics h1 {
+    font-size: var(--font-size-xlarge);
+  }
+  
+  .campus-metrics,
+  .students-highlight {
+    margin-bottom: var(--margin-small);
+  }
+  
+  .campus-metrics h3 {
+    font-size: var(--font-size-large-medium);
+    color: var(--neutral-800);
+    margin-bottom: var(--margin-small);
+  }
+  
+  .metrics {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 18px;
+    background-color: var(--neutral-200);
+    gap: 24px;
+  }
+  
+  .points-label {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-800);
+  }
+  
+  .points-count {
+    font-size: var(--font-size-xxlarge);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-purple);
+  }
+  
+  .points {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .students-highlight {
+    padding: 14px;
+  
+    border: 1px solid var(--neutral-400);
+    border-radius: 24px;
+    text-align: left;
+    margin-top: var(--margin-small);
+  }
+  
+  .title-highlight {
+    background-color: var(--primary-purple-light);
+    padding: 12px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .title-highlight img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .students-highlight h3 {
+    font-size: var(--font-size-large-medium);
+    color: var(--primary-purple);
+  }
+  
+  .students-highlight-list {
+    font-size: var(--font-size-large);
+    display: flex;
+    flex-direction: column;
+    color: var(--neutral-700);
+    margin-top: var(--margin-small);
+  }
+  
+  .student-info-highlight {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: var(--neutral-200);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .student-info-highlight:hover {
+    background-color: var(--primary-purple-light);
+  }
+  
+  .student-info-highlight img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .student-info-text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-info-text-container p {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-800);
+  }
+  
+  .student-info-text-container span {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-purple);
+  }
+  

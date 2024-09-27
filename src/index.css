@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
+
+:root {
+  /* Colors */
+  --neutral-0: #ffffff;
+  --neutral-100: #fafafc;
+  --neutral-200: #f2f5f9;
+  --neutral-300: #dcdee7;
+  --neutral-400: #bdc5ca;
+  --neutral-600: #88929f;
+  --neutral-700: #585b5f;
+  --neutral-800: #1e1e1e;
+  --primary-purple-light: #7f00ad1b;
+  --primary-purple: #8000ad;
+  --primary-purple-hover: #630087;
+  --red: #da3f57;
+  --red-light: #da3f5618;
+  --red-xlight: #fff4f4;
+  --red-medium: #e52727;
+  --red-medium-hover: #bc1f1f;
+  --green: #38a169;
+  --green-hover: #2b8253;
+  --yellow-light: #fff6e0;
+
+  /* Transitions */
+  --transition: 0.2s ease-in;
+
+  /* Font families */
+  --font-secondary: "Roboto", sans-serif;
+
+  /* Font sizes */
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-size-large-medium: 18px;
+  --font-size-xlarge: 24px;
+  --font-size-xxlarge: 36px;
+  --font-size-xxxlarge: 48px;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-xbold: 800;
+
+  /* Margin */
+  --margin-xsmall: 12px;
+  --margin-small: 16px;
+  --margin-large: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
