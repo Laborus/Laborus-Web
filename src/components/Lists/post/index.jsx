@@ -10,7 +10,7 @@ export default function PostList() {
       date: "2 dias atrás",
       title: "Muito obrigadaooooo!!!",
       text: "Eu e meus colegas de turma estamos promovendo uma pesquisa a respeito do aquecimento global. Agradeceria muito se pudessem contribuir com a pesquisa.",
-      image: "/assets/images/post-example-2.jpeg",
+      image: "src/assets/images/post-example-2.jpeg",
       likes: 143,
       comments: 21,
       shares: 2,

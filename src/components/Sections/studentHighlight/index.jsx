@@ -1,11 +1,11 @@
 import React from 'react';
-import './style.css';  // Estilos específicos para a lista de alunos
+import './style.css'; 
 
 export default function StudentsHighlight({ title, icon, students }) {
   return (
     <section className="students-highlight">
       <div className="title-highlight">
-        <img src={icon} alt={title} />
+        {icon}
         <h3>{title}</h3>
       </div>
       <div className="students-highlight-list">

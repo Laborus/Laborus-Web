@@ -1,17 +1,20 @@
 import React from 'react';
 import './style.css';
+import { BiLike } from "react-icons/bi";
+import { BsChat } from "react-icons/bs";
+import { GoShareAndroid } from "react-icons/go";
 
 export default function PostActions({ post, onCommentClick }) {
   return (
     <div className="post-actions">
       <div className="post-action-btn like-button">
-        <span><img src="/assets/vectors/vector_39_x2.svg" alt="Likes" /> {post.likes}</span>
+        <span><BiLike/> {post.likes}</span>
       </div>
       <div className="post-action-btn" onClick={onCommentClick}>
-        <span><img src="/assets/vectors/vector_419_x2.svg" alt="Comments" /> {post.comments}</span>
+        <span><BsChat/> {post.comments}</span>
       </div>
       <div className="post-action-btn">
-        <span><img src="/assets/vectors/vector_237_x2.svg" alt="Shares" /> {post.shares}</span>
+        <span><GoShareAndroid/> {post.shares}</span>
       </div>
     </div>
   );

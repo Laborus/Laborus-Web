@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { ProfileDropdown } from "../../Modal/profile";
 import { LogoutModal } from "../../Modal/logout";
+import { FaRegUser, FaRegStar } from "react-icons/fa";
+import { MdWorkOutline } from "react-icons/md";
+import { HiOutlineChatAlt } from "react-icons/hi";
+import { GoHome } from "react-icons/go";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import './style.css';
 import { PostModal } from "../../Modal/post";
 
@@ -17,13 +22,13 @@ export default function NavBar() {
       </div>
 
       <nav className="nav-menu">
-        <NavItem icon="/assets/vectors/iconamoon_home.svg" text="Página inicial" />
-        <NavItem icon="/assets/vectors/connections-icon.svg" text="Conexões" />
-        <NavItem icon="/assets/vectors/heroicons-outline_chat-alt.svg" text="Vagas" />
-        <NavItem icon="/assets/vectors/vector_507_x2.svg" text="Conversas" />
-        <NavItem text="Desafios" />
+        <NavItem icon={<GoHome />} text="Página inicial" />
+        <NavItem icon={<FaRegUser />} text="Conexões" />
+        <NavItem icon={<MdWorkOutline />} text="Vagas" />
+        <NavItem icon={<HiOutlineChatAlt />} text="Conversas" />
+        <NavItem icon={<FaRegStar />} text="Desafios" />
         <div className="nav-item notifications" onClick={() => setNotificationDropdown(!notificationDropdown)}>
-          <img src="/assets/vectors/notification-icon.svg" alt="Notificações" />
+          <IoMdNotificationsOutline />
           Notificações
           <span className="notification-count-item">2</span>
         </div>
@@ -42,7 +47,7 @@ export default function NavBar() {
 
 const NavItem = ({ href, icon, text }) => (
     <a href={href} className="nav-item">
-      <img src={icon} alt={text} />
+      {icon}
       {text}
     </a>
   );

@@ -2,6 +2,8 @@ import React from 'react';
 import './style.css'; 
 import StudentsHighlight from '../../Sections/studentHighlight';
 import MetricsSection from '../../Sections/metrics';
+import { FaRegBuilding } from "react-icons/fa";
+import { MdOutlineSchool } from "react-icons/md";
 
 export default function StudentMetrics() {
   return (
@@ -10,19 +12,19 @@ export default function StudentMetrics() {
       
       <StudentsHighlight
         title="Meu Campus"
-        icon="/assets/vectors/campus-icon.svg"
+        icon={<FaRegBuilding />}
         students={[
-          { image: "/assets/images/fatec-image.png", name: "Fatec Carapicuíba", info: "3.320 Alunos" },
+          { image: "src/assets/images/fatec-image.png", name: "Fatec Carapicuíba", info: "3.320 Alunos" },
         ]}
       />
       
       <StudentsHighlight
         title="Alunos destaques"
-        icon="/assets/vectors/vector_105_x2.svg"
+        icon={<MdOutlineSchool />}
         students={[
-          { image: "/assets/images/user3-laborus.jpeg", name: "Rogério Azevedo", info: "125 pontos" },
-          { image: "/assets/images/user2-laborus.jpeg", name: "Rogério Azevedo", info: "125 pontos" },
-          { image: "/assets/images/user5-laborus.png", name: "Rogério Azevedo", info: "125 pontos" },
+          { image: "src/assets/images/user-laborus.jpeg", name: "Rogério Azevedo", info: "125 pontos" },
+          { image: "src/assets/images/user-laborus.jpeg", name: "Rogério Azevedo", info: "125 pontos" },
+          { image: "src/assets/images/user-laborus.jpeg", name: "Rogério Azevedo", info: "125 pontos" },
         ]}
       />
     </aside>

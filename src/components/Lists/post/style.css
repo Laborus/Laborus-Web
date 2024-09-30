@@ -1,0 +1,54 @@
+/* Scroll */
+.post-list::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .post-list::-webkit-scrollbar-track {
+    background: var(--neutral-200);
+  }
+  
+  .post-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-purple);
+    border-radius: 10px;
+    border: 2px solid var(--neutral-200);
+  }
+  
+  .post {
+    background-color: var(--neutral-0);
+    border-radius: 8px;
+    padding: 6px 24px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .menu-item {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+  }
+  
+  .menu-item:hover {
+    background-color: var(--neutral-200);
+  }
+  
+  .menu-item:first-child {
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .menu-item:last-child {
+    background-color: var(--red-xlight);
+    color: var(--red-medium);
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .menu-item:last-child:hover {
+    background-color: var(--red-light);
+  }
+  
+  .menu-item img {
+    width: 20px;
+    height: 20px;
+  }
