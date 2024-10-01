@@ -1,0 +1,76 @@
+/* Error404.css */
+.error-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .error-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+  }
+  
+  .error-code {
+    font-size: 96px;
+    font-weight: bold;
+    color: #e63946;
+    margin: 0;
+  }
+  
+  .error-message {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  .error-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .btn-home {
+    text-decoration: none;
+    background-color: #0077b6;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-home:hover {
+    background-color: #005f8d;
+  }
+  
+  @media (max-width: 768px) {
+    .error-container {
+      padding: 30px 20px;
+    }
+  
+    .error-code {
+      font-size: 72px;
+    }
+  
+    .error-message {
+      font-size: 24px;
+    }
+  
+    .error-description {
+      font-size: 14px;
+    }
+  
+    .btn-home {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
