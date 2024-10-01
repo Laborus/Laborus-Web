@@ -6,12 +6,11 @@ import { MdWorkOutline } from "react-icons/md";
 import { HiOutlineChatAlt } from "react-icons/hi";
 import { GoHome } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { NavLink, Outlet } from "react-router-dom";
-import './style.css';
+import { NavLink } from "react-router-dom";
+import "./style.css";
 import { PostModal } from "../../Modal/post";
 
 export default function NavBar() {
-  const [notificationDropdown, setNotificationDropdown] = useState(false);
   const [postModal, setPostModal] = useState(false);
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
@@ -41,12 +40,11 @@ export default function NavBar() {
           Criar publicação
         </button>
 
+        {/* Mostrar o modal somente se `postModal` for true */}
         {postModal && <PostModal onClose={() => setPostModal(false)} />}
         {profileDropdown && <ProfileDropdown />}
         {logoutModal && <LogoutModal onClose={() => setLogoutModal(false)} />}
       </aside>
-
-      {/* This will render the content of the current route */}
     </>
   );
 }
@@ -54,9 +52,7 @@ export default function NavBar() {
 const NavLinkItem = ({ to, icon, text, extraText }) => (
   <NavLink
     to={to}
-    className={({ isActive }) =>
-      isActive ? "nav-item active" : "nav-item"
-    }
+    className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
   >
     {icon}
     {text}
