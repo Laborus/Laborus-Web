@@ -6,6 +6,7 @@ import { MdWorkOutline } from "react-icons/md";
 import { HiOutlineChatAlt } from "react-icons/hi";
 import { GoHome } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { NavLink, Outlet } from "react-router-dom";
 import './style.css';
 import { PostModal } from "../../Modal/post";
 
@@ -16,38 +17,49 @@ export default function NavBar() {
   const [logoutModal, setLogoutModal] = useState(false);
 
   return (
-    <aside className="sidebar">
-      <div className="logo">
-        <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
-      </div>
-
-      <nav className="nav-menu">
-        <NavItem icon={<GoHome />} text="Página inicial" />
-        <NavItem icon={<FaRegUser />} text="Conexões" />
-        <NavItem icon={<MdWorkOutline />} text="Vagas" />
-        <NavItem icon={<HiOutlineChatAlt />} text="Conversas" />
-        <NavItem icon={<FaRegStar />} text="Desafios" />
-        <div className="nav-item notifications" onClick={() => setNotificationDropdown(!notificationDropdown)}>
-          <IoMdNotificationsOutline />
-          Notificações
-          <span className="notification-count-item">2</span>
+    <>
+      <aside className="sidebar">
+        <div className="logo">
+          <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
         </div>
-      </nav>
 
-      <button className="btn-create-post" onClick={() => setPostModal(true)}>
-        Criar publicação
-      </button>
+        <nav className="nav-menu">
+          <NavLinkItem to="/" icon={<GoHome />} text="Página inicial" />
+          <NavLinkItem to="/connections" icon={<FaRegUser />} text="Conexões" />
+          <NavLinkItem to="/jobs" icon={<MdWorkOutline />} text="Vagas" />
+          <NavLinkItem to="/chats" icon={<HiOutlineChatAlt />} text="Conversas" />
+          <NavLinkItem to="/challenges" icon={<FaRegStar />} text="Desafios" />
+          <NavLinkItem
+            to="/notifications"
+            icon={<IoMdNotificationsOutline />}
+            text="Notificações"
+            extraText={<span className="notification-count-item">2</span>}
+          />
+        </nav>
 
-      {postModal && <PostModal onClose={() => setPostModal(false)} />}
-      {profileDropdown && <ProfileDropdown />}
-      {logoutModal && <LogoutModal onClose={() => setLogoutModal(false)} />}
-    </aside>
+        <button className="btn-create-post" onClick={() => setPostModal(true)}>
+          Criar publicação
+        </button>
+
+        {postModal && <PostModal onClose={() => setPostModal(false)} />}
+        {profileDropdown && <ProfileDropdown />}
+        {logoutModal && <LogoutModal onClose={() => setLogoutModal(false)} />}
+      </aside>
+
+      {/* This will render the content of the current route */}
+    </>
   );
 }
 
-const NavItem = ({ href, icon, text }) => (
-    <a href={href} className="nav-item">
-      {icon}
-      {text}
-    </a>
-  );
+const NavLinkItem = ({ to, icon, text, extraText }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) =>
+      isActive ? "nav-item active" : "nav-item"
+    }
+  >
+    {icon}
+    {text}
+    {extraText && <span className="extra-text">{extraText}</span>}
+  </NavLink>
+);

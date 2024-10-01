@@ -36,6 +36,7 @@
   
   .nav-item:hover {
     background-color: var(--primary-purple-light);
+    color: var(--primary-purple);
     transform: scale(1.02);
   }
   
@@ -44,15 +45,17 @@
     height: auto;
   }
   
-  .nav-item.active {
+
+
+  .nav-item.active{
     background-color: var(--primary-purple-light);
     color: var(--primary-purple);
   }
   
   .nav-item.active svg {
-    filter: hue-rotate(0deg) brightness(0) saturate(100%) sepia(100%)
-      hue-rotate(-50deg);
+    color: var(--primary-purple);
   }
+
   
   .btn-create-post {
     background-color: var(--primary-purple);
