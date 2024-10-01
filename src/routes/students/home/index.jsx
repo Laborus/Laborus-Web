@@ -5,10 +5,9 @@ import "./style.css";
 
 export default function HomePage() {
   return (
-    <main className="container">
-      <NavBar />
+    <>
       <PostList />
       <StudentMetrics />
-    </main>
+    </>
   );
 }
