@@ -1,0 +1,229 @@
+/* Sidebar: Chat List */
+.chat-sidebar {
+  width: 36%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--neutral-200);
+  border-right: 1px solid var(--neutral-300);
+  border-left: 1px solid var(--neutral-300);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-purple-light-medium) transparent;
+}
+
+.chat-sidebar-header {
+  padding: 10px;
+  background-color: var(--neutral-0);
+}
+
+.chat-title {
+  font-size: var(--font-size-xlarge);
+  margin-bottom: var(--margin-small);
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 24px;
+  border: none;
+  background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  font-size: var(--font-size-medium);
+  margin-bottom: var(--margin-small);
+  outline: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  right: 14px;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.clear-btn {
+  position: absolute;
+  top: 10%;
+  right: 48px;
+  line-height: 20px;
+  background: none;
+  border: none;
+  font-size: var(--font-size-large-medium);
+  color: var(--primary-purple);
+  cursor: pointer;
+  display: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  background-color: var(--primary-purple-light);
+  transition: var(--transition);
+}
+
+.clear-btn:hover {
+  color: var(--primary-purple-hover);
+}
+
+/* Filter btn */
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 16px;
+}
+
+.filter-button {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral-400);
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.filter-button.active {
+  color: var(--primary-purple);
+}
+
+.filter-button.active::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-purple);
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+/* Connections List */
+
+.connections-list {
+  list-style: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  display: none;
+}
+
+.connections-list.students {
+  display: block;
+}
+
+.connection-list-item {
+  position: relative;
+  padding: 16px 22px;
+  display: flex;
+  align-items: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--neutral-700);
+  background-color: var(--neutral-0);
+  border-bottom: 1px solid var(--neutral-200);
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.wrap-job-content {
+  display: flex;
+  gap: 12px;
+}
+
+.connection-list-item:hover {
+  background-color: var(--primary-purple-light);
+}
+
+.connection-list-item.active {
+  background-color: var(--primary-purple-light-medium);
+  color: var(--neutral-100);
+}
+
+.connection-list-item.active .last-message,
+.connection-list-item.active .chat-time {
+  color: var(--neutral-200);
+}
+
+.connection-list-item .last-message,
+.connection-list-item .chat-time {
+  color: initial;
+  color: var(--neutral-600);
+}
+
+.connection-list-item img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.connection-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name-connection {
+  font-size: var(--font-size-large);
+  color: var(--neutral-800);
+}
+
+.school-info {
+  display: flex;
+  gap: 2px;
+}
+
+.school-info img {
+  width: 21px;
+  height: 19px;
+}
+
+.school-info span {
+  font-size: var(--font-size-medium);
+}
+
+.connections-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--margin-small);
+}
+
+.connections-buttons button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.connections-buttons #confirm-btn {
+  color: var(--neutral-0);
+  background-color: var(--primary-purple);
+}
+
+.connections-buttons #cancel-btn {
+  background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  font-size: var(--font-size-large-medium);
+  padding: 8px 12.5px;
+  transition: var(--transition);
+}
+
+.connections-buttons #cancel-btn:hover {
+  background-color: var(--neutral-300);
+}
+
+.follow-btn.following {
+  background-color: var(--green);
+  color: var(--neutral-0);
+}
