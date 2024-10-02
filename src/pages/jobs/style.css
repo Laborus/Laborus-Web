@@ -1,0 +1,52 @@
+/* src/pages/style.css */
+.jobs-page {
+  display: flex;
+}
+
+.jobs-content {
+  flex: 1; /* Permite que o conteúdo principal ocupe o restante da largura */
+  padding: 24px; /* Adiciona um pouco de espaçamento */
+  background-color: var(--neutral-100); /* Altere conforme necessário */
+}
+
+.page-title {
+  font-size: var(--font-size-xxlarge);
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.job-item {
+  background-color: var(--neutral-0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.job-item:hover {
+  transform: scale(1.02);
+}
+
+.job-title {
+  font-size: var(--font-size-large-medium);
+  color: var(--neutral-800);
+  font-weight: var(--font-weight-bold);
+}
+
+.job-company,
+.job-location {
+  color: var(--neutral-600);
+  margin-top: 5px;
+}
+
+.job-description {
+  margin-top: 10px;
+  color: var(--neutral-700);
+}
