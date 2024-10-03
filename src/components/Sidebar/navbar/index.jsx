@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import { ProfileDropdown } from "../../Modal/profile";
-import { LogoutModal } from "../../Modal/logout";
 import { FaRegUser, FaRegStar } from "react-icons/fa";
 import { MdWorkOutline } from "react-icons/md";
 import { HiOutlineChatAlt } from "react-icons/hi";
 import { GoHome } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { NavLink, Outlet } from "react-router-dom";
-import './style.css';
-import { PostModal } from "../../Modal/post";
+import { NavLink } from "react-router-dom";
+import "./style.css";
+import { PostModal } from "../../Post/createPost";
+import ProfileSection from "./profile";
+import { LogoutModal } from "./logout";
 
 export default function NavBar() {
-  const [notificationDropdown, setNotificationDropdown] = useState(false);
   const [postModal, setPostModal] = useState(false);
-  const [profileDropdown, setProfileDropdown] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
 
   return (
@@ -41,12 +39,10 @@ export default function NavBar() {
           Criar publicação
         </button>
 
+        <ProfileSection/>
         {postModal && <PostModal onClose={() => setPostModal(false)} />}
-        {profileDropdown && <ProfileDropdown />}
         {logoutModal && <LogoutModal onClose={() => setLogoutModal(false)} />}
       </aside>
-
-      {/* This will render the content of the current route */}
     </>
   );
 }
@@ -54,9 +50,7 @@ export default function NavBar() {
 const NavLinkItem = ({ to, icon, text, extraText }) => (
   <NavLink
     to={to}
-    className={({ isActive }) =>
-      isActive ? "nav-item active" : "nav-item"
-    }
+    className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
   >
     {icon}
     {text}

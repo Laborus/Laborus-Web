@@ -104,3 +104,7 @@
     display: none;
   }
   
+.post-options-menu > .menu-item > svg{
+  width: 20px;
+  height: 20px;
+}
