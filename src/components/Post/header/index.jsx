@@ -4,7 +4,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { TbMessage2Off } from "react-icons/tb"; 
 import { FaRegBookmark, FaRegTrashAlt } from "react-icons/fa";
 import { RiEdit2Line } from "react-icons/ri";
-import styles from './style.module.css';
+import styles from './headerPost.module.css';
 
 export default function PostHeader({ post }) {
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
@@ -44,19 +44,19 @@ export default function PostHeader({ post }) {
           <BsThreeDots />
           {showOptionsMenu && (
             <div id="post-options-menu" className={styles.postOptionsMenu}>
-              <div className={styles.menuItem}>
+              <div className='menu-item'>
                 <FaRegBookmark className={styles.svg} /> Salvar
               </div>
-              <div className={styles.menuItem}>
+              <div className='menu-item'>
                 <RiEdit2Line className={styles.svg} /> Editar
               </div>
-              <div className={styles.menuItem}>
+              <div className='menu-item'>
                 <TbMessage2Off className={styles.svg} /> Ocultar curtidas
               </div>
-              <div className={styles.menuItem}>
+              <div className='menu-item'>
                 <TbMessage2Off className={styles.svg} /> Desativar comentários
               </div>
-              <div className={styles.menuItem} onClick={openDeleteModal}>
+              <div className='menu-item' onClick={openDeleteModal}>
                 <FaRegTrashAlt  className={styles.svg}/> Excluir publicação
               </div>
             </div>

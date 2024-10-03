@@ -1,0 +1,31 @@
+.menu-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.menu-item:hover {
+  background-color: var(--neutral-200);
+}
+
+.menu-item:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.menu-item:last-child {
+  background-color: var(--red-xlight);
+  color: var(--red-medium);
+  border-radius: 0 0 12px 12px;
+}
+
+.menu-item:last-child:hover {
+  background-color: var(--red-light);
+}
+
+.menu-item svg {
+  width: 20px;
+  height: 20px;
+}
