@@ -18,14 +18,17 @@ export default function Jobs() {
 
         <main class="profile-content">
           <div class="cover-photo">
-            <img src="/assets/images/post-example-2.jpeg" alt="Cover Photo" />
+            <img
+              src="src/assets/images/post-example-2.jpeg"
+              alt="Cover Photo"
+            />
           </div>
           <div class="profile-info">
             <div class="profile-user-info-details">
               <div class="profile-pic-container">
                 <img
                   class="profile-pic"
-                  src="../../assets/images/user-company-1.png"
+                  src="src/assets/images/fatec-image.png"
                   alt="Profile Picture"
                 />
               </div>
