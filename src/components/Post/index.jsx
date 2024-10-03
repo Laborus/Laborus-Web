@@ -5,7 +5,7 @@ import PostActions from "./actions";
 import PostHeader from "./header";
 
 export default function Post({ post }) {
-  const [commentModalOpen, setCommentModalOpen] = useState(true);
+  const [commentModalOpen, setCommentModalOpen] = useState(false);
 
   const toggleCommentModal = () => {
     setCommentModalOpen(!commentModalOpen);
