@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import HomePage from "./routes/students/home";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import App from "./routes/router";
 import Error404 from "./routes/404";
