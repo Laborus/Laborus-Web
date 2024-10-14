@@ -12,12 +12,12 @@
   justify-content: center;
 }
 
-.modal.show {
+.show {
   display: flex;
 }
 
-.modal-content {
-  background-color: var(--neutral-100);
+.modalContent {
+  background-color: var(--neutral100) !important;
   margin: 6% auto;
   padding: 24px 16px;
   border-radius: 16px;
@@ -29,40 +29,40 @@
 }
 
 /* Header */
-.post-header {
+.postHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.user-avatar {
+.userAvatar {
   width: 54px;
   height: 54px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.user-info {
+.userInfo {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 12px;
 }
 
-.avatar-content {
+.avatarContent {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.feed-btn {
+.feedBtn {
   background-color: transparent;
-  color: var(--primary-purple);
-  border: 1px solid var(--primary-purple);
+  color: var(--primaryPurple);
+  border: 1px solid var(--primaryPurple);
   padding: 6px 12px;
   border-radius: 24px;
-  font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightSemibold);
   cursor: pointer;
 }
 
@@ -72,22 +72,24 @@
   top: 10px;
   right: 20px;
   font-size: 32px;
-  color: var(--neutral-800);
+  color: var(--neutral800);
   cursor: pointer;
   padding: 12px;
   border-radius: 50%;
 }
 
 /* Content */
-.post-content {
+.postContent {
   overflow-y: auto;
   max-height: calc(60vh - 70px);
 }
-.post-content::-webkit-scrollbar {
-  width: 0; 
+
+.postContent::-webkit-scrollbar {
+  width: 0;
 }
-.create-post-title,
-.create-post-text {
+
+.createPostTitle,
+.createPostText {
   width: 100%;
   padding: 12px 0;
   background-color: transparent;
@@ -97,30 +99,30 @@
   margin-bottom: 10px;
 }
 
-.create-post-title {
-  font-size: var(--font-size-xlarge);
+.createPostTitle {
+  font-size: var(--fontSizeXLarge);
 }
 
-.create-post-text {
+.createPostText {
   height: 100px;
   max-height: 300px;
-  font-size: var(--font-size-large-medium);
+  font-size: var(--fontSizeLargeMedium);
   resize: none;
   overflow-y: auto;
 }
 
 /* Image Preview */
-.image-preview-container {
+.imagePreviewContainer {
   width: 100%;
-  margin-top: var(--margin-small);
+  margin-top: var(--marginSmall);
   text-align: center;
-  border: 1px solid var(--neutral-400);
+  border: 1px solid var(--neutral400);
   border-radius: 12px;
   padding: 8px;
   position: relative;
 }
 
-.image-preview{
+.imagePreview {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -128,7 +130,7 @@
 }
 
 /* Remove Button */
-.remove-image-btn {
+.removeImageBtn {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -144,22 +146,22 @@
   cursor: pointer;
 }
 
-.remove-image-btn:hover {
+.removeImageBtn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Footer */
-.post-footer {
+.postFooter {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.image-upload-btn,
-.disable-comments-btn {
-  background-color: var(--neutral-300);
-  font-size: var(--font-size-large-medium);
-  color: var(--neutral-700);
+.imageUploadBtn,
+.disableCommentsBtn {
+  background-color: var(--neutral300);
+  font-size: var(--fontSizeLargeMedium);
+  color: var(--neutral700);
   display: flex;
   place-items: center;
   border: none;
@@ -168,29 +170,29 @@
   cursor: pointer;
 }
 
-.image-upload-btn.disabled {
-  background-color: var(--neutral-300);
-  color: var(--neutral-700);
+.imageUploadBtn.disabled {
+  background-color: var(--neutral300);
+  color: var(--neutral700);
   cursor: not-allowed;
   opacity: 0.6; 
 }
 
-.publish-btn {
-  background-color: var(--primary-purple);
-  color: var(--neutral-0);
+.publishBtn {
+  background-color: var(--primaryPurple);
+  color: var(--neutral0);
   border: none;
   padding: 16px 12px;
   border-radius: 12px;
   width: 100%;
   cursor: pointer;
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-semibold);
-  margin-top: var(--margin-small);
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightSemibold);
+  margin-top: var(--marginSmall);
   transition: var(--transition);
 }
 
-.publish-btn:disabled {
-  background-color: var(--neutral-300);
-  color: var(--neutral-600);
+.publishBtn:disabled {
+  background-color: var(--neutral300);
+  color: var(--neutral600);
   cursor: not-allowed;
 }

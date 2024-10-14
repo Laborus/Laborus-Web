@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 import { MdSchool } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
-import { TbMessage2Off} from "react-icons/tb"; 
+import { TbMessage2Off } from "react-icons/tb"; 
 import { FaRegBookmark, FaRegTrashAlt } from "react-icons/fa";
 import { RiEdit2Line } from "react-icons/ri";
-
-import './style.css';
+import styles from './headerPost.module.css';
 
 export default function PostHeader({ post }) {
-  // Estado para controlar a visibilidade do menu de opções e do modal de exclusão
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  // Função para alternar a visibilidade do menu de opções
   const toggleOptionsMenu = () => {
     setShowOptionsMenu(prevState => !prevState);
   };
 
-  // Funções para abrir e fechar o modal de exclusão
   const openDeleteModal = () => {
     setShowDeleteModal(true);
-    setShowOptionsMenu(false); // Fecha o menu de opções ao abrir o modal
+    setShowOptionsMenu(false);
   };
 
   const closeDeleteModal = () => {
@@ -28,54 +24,52 @@ export default function PostHeader({ post }) {
   };
 
   const confirmDelete = () => {
-    // Aqui você pode adicionar a lógica para excluir o post
     console.log('Post excluído');
     closeDeleteModal();
   };
 
   return (
-    <header className="post-header">
-      <img src="src/assets/images/user-laborus.jpeg" alt="Profile Picture" className="post-profile-img" />
-      <div className="post-info">
-        <div className="posted-by">
-          <h2 className="post-username">{post.username}</h2>
-          <div className="school-info">
-            <MdSchool />
-            <span className="post-username-school">{post.school}</span>
-            <span className="post-date">• {post.date}</span>
+    <header className={styles.postHeader}>
+      <img src="src/assets/images/user-laborus.jpeg" alt="Profile Picture" className={styles.postProfileImg} />
+      <div className={styles.postInfo}>
+        <div className={styles.postedBy}>
+          <h2 className={styles.postUsername}>{post.username}</h2>
+          <div className={styles.schoolInfo}>
+            <MdSchool className={styles.schoolInfoSvg}/>
+            <span className={styles.postUsernameSchool}>{post.school}</span>
+            <span className={styles.postDate}>• {post.date}</span>
           </div>
         </div>
-        <div className="post-options" onClick={toggleOptionsMenu}>
+        <div className={styles.postOptions} onClick={toggleOptionsMenu}>
           <BsThreeDots />
           {showOptionsMenu && (
-            <div id="post-options-menu" className="post-options-menu">
-              <div className="menu-item">
-              <FaRegBookmark/> Salvar
+            <div id="post-options-menu" className={styles.postOptionsMenu}>
+              <div className='menu-item'>
+                <FaRegBookmark className={styles.svg} /> Salvar
               </div>
-              <div className="menu-item">
-                <RiEdit2Line/> Editar
+              <div className='menu-item'>
+                <RiEdit2Line className={styles.svg} /> Editar
               </div>
-              <div className="menu-item">
-                <TbMessage2Off/> Ocultar curtidas
+              <div className='menu-item'>
+                <TbMessage2Off className={styles.svg} /> Ocultar curtidas
               </div>
-              <div className="menu-item">
-              <TbMessage2Off/> Desativar comentários
+              <div className='menu-item'>
+                <TbMessage2Off className={styles.svg} /> Desativar comentários
               </div>
-              <div className="menu-item" onClick={openDeleteModal}>
-                <FaRegTrashAlt/> Excluir publicação
+              <div className='menu-item' onClick={openDeleteModal}>
+                <FaRegTrashAlt  className={styles.svg}/> Excluir publicação
               </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* Modal de exclusão */}
       {showDeleteModal && (
-        <div id="delete-post-modal" className="delete-modal">
-          <div className="delete-modal-content">
+        <div id="delete-post-modal" className={styles.deleteModal}>
+          <div className={styles.deleteModalContent}>
             <h2>Excluir Publicação</h2>
             <p>Tem certeza de que deseja excluir esta publicação?</p>
-            <div className="delete-modal-buttons">
+            <div className={styles.deleteModalButtons}>
               <button id="confirm-delete-post" onClick={confirmDelete}>Excluir</button>
               <button id="cancel-delete-post" onClick={closeDeleteModal}>Cancelar</button>
             </div>

@@ -1,6 +1,6 @@
 // src/pages/Jobs.jsx
-import NavBar from "../../components/Sidebar/navbar";
-import SearchSection from "../../components/SearchSection";
+import NavBar from "../../../components/Sidebar/navbar";
+import SearchSection from "../../../components/SearchSection";
 import {
   FaBriefcase,
   FaClock,
@@ -11,8 +11,6 @@ import "./style.css";
 
 export default function Jobs() {
   return (
-    <div class="container">
-      <NavBar />
       <div class="chat-container">
         <SearchSection />
 
@@ -96,6 +94,5 @@ export default function Jobs() {
           </section>
         </main>
       </div>
-    </div>
   );
 }

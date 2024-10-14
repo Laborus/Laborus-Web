@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import styles from "./postModal.module.css"; 
 import { TbMessage2Off, TbMessageCircle } from "react-icons/tb"; 
 import { FaImage } from "react-icons/fa";
 
@@ -23,56 +23,56 @@ export function PostModal({ onClose }) {
   };
 
   const handleOutsideClick = (event) => {
-    if (event.target.classList.contains("modal")) {
+    if (event.target.classList.contains(styles.modal)) {
       onClose();
     }
   };
 
   return (
-    <div className="modal show" onClick={handleOutsideClick}> 
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>
+    <div className={`${styles.modal} ${styles.show}`} onClick={handleOutsideClick}> 
+      <div className={styles.modalContent}>
+        <span className={styles.close} onClick={onClose}>
           &times;
         </span>
-        <div className="post-header">
-          <div className="user-info">
+        <div className={styles.postHeader}>
+          <div className={styles.userInfo}>
             <img
               src="src/assets/images/user-laborus.jpeg"
               alt="User Avatar"
-              className="user-avatar"
+              className={styles.userAvatar}
             />
-            <div className="avatar-content">
+            <div className={styles.avatarContent}>
               <h4>Ana Maria</h4>
-              <button className="feed-btn">Feed Global</button>
+              <button className={styles.feedBtn}>Feed Global</button>
             </div>
           </div>
         </div>
-        <div className="post-content">
+        <div className={styles.postContent}>
           <input
             type="text"
             placeholder="Título aqui..."
-            className="create-post-title"
+            className={styles.createPostTitle}
           />
           <textarea
             placeholder="Escreva alguma coisa..."
-            className="create-post-text"
+            className={styles.createPostText}
           ></textarea>
 
           {image && (
-            <div className="image-preview-container">
-              <img src={image} alt="Preview" className="image-preview"/>
+            <div className={styles.imagePreviewContainer}>
+              <img src={image} alt="Preview" className={styles.imagePreview}/>
               <span
                 onClick={() => setImage(null)}
-                className="remove-image-btn"
+                className={styles.removeImageBtn}
               >
                 &times;
               </span>
             </div>
           )}
 
-          <div className="post-footer">
+          <div className={styles.postFooter}>
             <button
-              className={`image-upload-btn ${image ? 'disabled' : ''}`}
+              className={`${styles.imageUploadBtn} ${image ? styles.disabled : ''}`}
               onClick={() => {
                 if (!image) {
                   document.getElementById("media-upload-input").click();
@@ -91,7 +91,7 @@ export function PostModal({ onClose }) {
             />
 
             <button
-              className="disable-comments-btn"
+              className={styles.disableCommentsBtn}
               onClick={toggleComments}
               title={
                 commentsDisabled ? "Comentários desativados" : "Desativar Comentários"
@@ -101,7 +101,7 @@ export function PostModal({ onClose }) {
             </button>
           </div>
         </div>
-        <button className="publish-btn">Publicar</button>
+        <button className={styles.publishBtn}>Publicar</button>
       </div>
     </div>
   );
