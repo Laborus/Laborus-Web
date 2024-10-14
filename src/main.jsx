@@ -7,6 +7,7 @@ import Error404 from "./routes/404";
 import Connections from "./routes/students/connections";
 import Jobs from "./routes/students/jobs";
 import HomePage from "./routes/students/home";
+import Challenges from "./routes/students/challenges/index..";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,8 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/connections", element: <Connections /> },
       { path: "/jobs", element: <Jobs /> },
+      { path: "/challenges", element: <Challenges /> },
+
     ],
   },
 ]);
