@@ -1,4 +1,5 @@
-import NavBar from "../../../components/Sidebar/navbar";
+import SearchBar from "../../../components/SearchBar";
+
 import {
   FaSearch,
   FaEllipsisH,
@@ -15,19 +16,7 @@ export default function Chats() {
       <aside class="chat-sidebar">
         <header class="chat-sidebar-header">
           <h1 class="chat-title">Conversas</h1>
-          <div class="search-container">
-            <input
-              type="text"
-              placeholder="Buscar"
-              id="search-input"
-              class="search-bar"
-            />
-
-            <FaSearch className="search-icon" />
-            <button class="clear-btn" id="clearButton">
-              &times;
-            </button>
-          </div>
+          <SearchBar />
         </header>
         <ul class="chat-list">
           <li class="chat-list-item active">
