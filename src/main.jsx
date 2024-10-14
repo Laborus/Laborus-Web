@@ -9,7 +9,7 @@ import Jobs from "./routes/students/jobs";
 import HomePage from "./routes/students/home";
 import Chats from "./routes/students/chats";
 import Challenges from "./routes/students/challenges/index..";
-s
+
 const router = createBrowserRouter([
   {
     path: "/",
