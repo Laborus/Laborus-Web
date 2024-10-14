@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
-@import './modal/modalDropdown.css';
+@import "./modal/modalDropdown.css";
 
 :root {
   /* Colors */
@@ -12,6 +12,7 @@
   --neutral-700: #585b5f;
   --neutral-800: #1e1e1e;
   --primary-purple-light: #7f00ad1b;
+  --primary-purple-light-medium: #7f00ad7e;
   --primary-purple: #8000ad;
   --primary-purple-hover: #630087;
   --red: #da3f57;
@@ -58,5 +59,3 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
-
