@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './style.css';
-import CommentModal from '../Modal/comment';
-import PostActions from './actions';
-import PostHeader from './header';
+import React, { useState } from "react";
+import styles from "./post.module.css";
+import CommentModal from "./comment";
+import PostActions from "./actions";
+import PostHeader from "./header";
 
 export default function Post({ post }) {
   const [commentModalOpen, setCommentModalOpen] = useState(false);
@@ -12,17 +12,27 @@ export default function Post({ post }) {
   };
 
   return (
-    <section className="post">
+    <section className={styles.post}>
       <PostHeader post={post} />
-      <h1 className="post-title">{post.title}</h1>
-      <p className="post-text">{post.text}</p>
+      <h1 className={styles.postTitle}>{post.title}</h1>
+      <p className={styles.postText}>{post.text}</p>
       {post.image && (
-        <div className="post-image-container">
-          <img src={post.image} alt="Post" className="post-image" />
+        <div className={styles.postImageContainer}>
+          <img src={post.image} alt="Post" className={styles.postImage} />
         </div>
       )}
       <PostActions post={post} onCommentClick={toggleCommentModal} />
-      {commentModalOpen && <CommentModal onClose={toggleCommentModal} />}
+      <div className={styles.postComment} id="openCommentModalBtn">
+        <img
+          src="src/assets/images/user-laborus.jpeg"
+          alt="Profile Picture"
+          className={styles.commentProfileImg}
+        />
+        <div className={styles.commentContent} onClick={toggleCommentModal}>
+          <p>Comente algo...</p>
+        </div>
+        {commentModalOpen && <CommentModal onClose={toggleCommentModal} />}
+      </div>
     </section>
   );
 }

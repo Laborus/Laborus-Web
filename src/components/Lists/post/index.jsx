@@ -1,6 +1,7 @@
 import React from 'react';
-import './style.css'; 
+import styles from './postList.module.css'; 
 import Post from '../../Post';
+
 export default function PostList() {
   const posts = [
     {
@@ -18,8 +19,8 @@ export default function PostList() {
   ];
 
   return (
-    <main className="content">
-      <div className="post-list">
+    <main className={styles.content}>
+      <div className={styles.postList}>
         {posts.map(post => <Post key={post.id} post={post} />)}
       </div>
     </main>

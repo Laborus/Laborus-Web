@@ -1,3 +1,4 @@
+
 .profile-section {
     display: flex;
     align-items: center;
@@ -63,7 +64,7 @@
     background-color: var(--red-light);
   }
   
-  .dropdown-item i {
+  .dropdown-item svg {
     margin-right: 10px;
     font-size: 18px;
   }
@@ -90,19 +91,3 @@
     border-radius: 50%;
     object-fit: cover;
   }
-  
-  .content {
-    flex: 1;
-    padding: 8px 12px;
-    background-color: var(--neutral-300);
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    max-width: 600px;
-  }
-  
-  .post-list {
-    max-height: calc(100vh - 12px);
-    overflow-y: auto;
-    scroll-behavior: smooth;
-  }
-  

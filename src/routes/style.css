@@ -1,15 +1,12 @@
-
 body {
-    background-color: var(--neutral-100);
+    background-color: var(--neutral-0);
     font-family: "Inter", sans-serif;
     overflow: hidden;
-  }
-  
-  .container {
+}
+
+.container {
     display: flex;
-    min-height: 100vh;
+    min-height: 100vh;   
     justify-content: center;
     gap: 14px;
-  }
-  
-  
+}
