@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './postList.module.css'; 
-import Post from '../../Post';
-
+import Post from '../../../../components/Post';
 export default function PostList() {
   const posts = [
     {

@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.css';
+import styles from './logout.module.css';
 
 export function LogoutModal({ onClose, onLogout }) {
   return (
-    <div className="modal-logout">
-      <div className="logout-modal-content">
+    <div className={styles.modalLogout}>
+      <div className={styles.logoutModalContent}>
         <h2>Saindo...</h2>
         <p>Tem certeza de que deseja sair?</p>
-        <div className="logout-modal-buttons">
-          <button id='confirm-logout' onClick={onLogout}>Sair</button>
-          <button id='cancel-logout' onClick={onClose}>Cancelar</button>
+        <div className={styles.logoutModalButtons}>
+          <button id={styles.confirmLogout} onClick={onLogout}>Sair</button>
+          <button id={styles.cancelLogout} onClick={onClose}>Cancelar</button>
         </div>
       </div>
     </div>

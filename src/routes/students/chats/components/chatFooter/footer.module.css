@@ -1,0 +1,56 @@
+.chatFooter {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: var(--neutral-0);
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  
+  .selectImage,
+  .selectVideo {
+    background-color: transparent;
+    color: var(--neutral-600);
+    border: none;
+    cursor: pointer;
+    background-color: var(--neutral-300);
+    padding: 15px;
+    border-radius: 50%;
+    align-items: center;
+  }
+  
+  .chatInput {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 48px;
+    border: none;
+    background-color: var(--neutral-300);
+    color: var(--neutral-800);
+    outline: none;
+    font-size: var(--font-size-large);
+  }
+  
+  .sendButton {
+    background-color: var(--primary-purple);
+    border: none;
+    color: var(--neutral-100);
+    padding: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .sendButton:hover {
+    background-color: var(--primary-purple-hover);
+  }
+  
+  .sendButton:disabled {
+    background-color: var(--neutral-300);
+    color: var(--neutral-600);
+    cursor: not-allowed;
+  }
+  

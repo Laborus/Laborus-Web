@@ -1,0 +1,39 @@
+.campusMetrics {
+    padding: 20px;
+    border: 1px solid var(--neutral-400);
+    border-radius: 24px;
+    margin-top: var(--margin-small);
+    text-align: left;
+  }
+  
+  .campusMetrics h3 {
+    font-size: var(--font-size-large-medium);
+    color: var(--primary-purple);
+    margin-bottom: 16px;
+  }
+  
+  .metrics {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+  }
+  
+  .points {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .pointsLabel {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+    color: var(--neutral-800);
+  }
+  
+  .pointsCount {
+    font-size: var(--font-size-xxlarge);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-purple);
+  }
+  

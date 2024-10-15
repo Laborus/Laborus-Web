@@ -1,0 +1,71 @@
+.chatSidebar {
+  width: 38%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--neutral-100);
+  border-right: 1px solid var(--neutral-300);
+  border-left: 1px solid var(--neutral-300);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-purple-light-medium) transparent;
+}
+
+.chatSidebarHeader {
+  padding: 10px;
+  background-color: var(--neutral-0);
+}
+
+.chatTitle {
+  font-size: var(--font-size-xlarge);
+  margin-bottom: var(--margin-small);
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 24px;
+  border: none;
+  background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  font-size: var(--font-size-medium);
+  margin-bottom: var(--margin-small);
+  outline: transparent;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 14px;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.clearBtn {
+  position: absolute;
+  top: 10%;
+  right: 48px;
+  line-height: 20px;
+  background: none;
+  border: none;
+  font-size: var(--font-size-large-medium);
+  color: var(--primary-purple);
+  cursor: pointer;
+  display: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  background-color: var(--primary-purple-light);
+  transition: var(--transition);
+}
+
+.clearBtn:hover {
+  color: var(--primary-purple-hover);
+}

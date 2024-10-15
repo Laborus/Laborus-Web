@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'; 
-import StudentsHighlight from '../../Sections/studentHighlight';
-import MetricsSection from '../../Sections/metrics';
+import StudentsHighlight from './studentHighlight';
+import MetricsSection from './metrics';
 import { FaRegBuilding } from "react-icons/fa";
 import { MdOutlineSchool } from "react-icons/md";
 
@@ -9,7 +9,6 @@ export default function StudentMetrics() {
   return (
     <aside className="sidebar-right">
       <MetricsSection />
-      
       <StudentsHighlight
         title="Meu Campus"
         icon={<FaRegBuilding />}
