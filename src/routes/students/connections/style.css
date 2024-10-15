@@ -17,6 +17,11 @@
   object-fit: cover;
 }
 
+.chat-container {
+  display: flex;
+  width: 100%;
+}
+
 /* Profile Information Section */
 .profile-info {
   display: flex;

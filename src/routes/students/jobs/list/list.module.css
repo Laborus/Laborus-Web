@@ -1,0 +1,10 @@
+.connectionsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .connectionsList li {
+    margin-bottom: 16px;
+  }
+  

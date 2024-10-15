@@ -1,0 +1,22 @@
+.aboutWrapper {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .aboutSection {
+    background-color: rgba(129, 97, 176, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .aboutSection h2 {
+    font-size: var(--font-size-large-medium);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--margin-small);
+  }
+  
+  .aboutSection p {
+    font-size: var(--font-size-large);
+    color: var(--neutral-700);
+  }
+  

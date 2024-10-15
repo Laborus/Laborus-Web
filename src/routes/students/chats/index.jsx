@@ -1,11 +1,10 @@
-import { FaEllipsisH, FaImage, FaVideo, FaPaperPlane } from "react-icons/fa";
-import "./style.css";
-import ChatSidebar from "./components/chatSidebar";
+import ChatSidebar from "./components/sidebar";
 import ChatContent from "./components/chatContent";
+import styles from "./style.module.css";
 
 export default function ChatPages() {
   return (
-    <div className="chat-container">
+    <div className={styles.chatContainer}>
       <ChatSidebar />
       <ChatContent />
     </div>

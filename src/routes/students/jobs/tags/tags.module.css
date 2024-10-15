@@ -1,0 +1,15 @@
+.tagContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .tag {
+    background-color: var(--primary-purple);
+    color: var(--neutral-0);
+    border-radius: 24px;
+    padding: 8px 16px;
+    font-size: var(--font-size-large);
+  }
+  
