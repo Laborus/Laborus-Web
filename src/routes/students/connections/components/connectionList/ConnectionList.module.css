@@ -1,0 +1,59 @@
+/* Styles for the Connection List Component */
+.connectionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connectionListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.wrapUserContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wrapUserContent img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.connectionInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameConnection {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.schoolInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neutral-600);
+  font-size: var(--font-size-small);
+}
+
+.connectionsButtons {
+  display: flex;
+  align-items: center;
+}
+
+#confirmBtn {
+  background-color: var(--primary-purple);
+  color: var(--neutral-0);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+}

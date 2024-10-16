@@ -1,0 +1,21 @@
+/* Filter Buttons */
+.filterButtonsContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filterButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--neutral-200);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.filterButtonActive {
+  background-color: var(--primary-purple);
+  color: var(--neutral-0);
+}
