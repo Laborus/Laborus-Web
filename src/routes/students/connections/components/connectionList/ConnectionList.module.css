@@ -1,3 +1,5 @@
+@import "../../../../../styles/index.css";
+
 /* Styles for the Connection List Component */
 .connectionsList {
   list-style: none;
@@ -9,13 +11,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 22px 16px;
   border-bottom: 1px solid var(--neutral-200);
+  background-color: var(--neutral-0);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.connectionListItem:hover {
+  background-color: var(--primary-purple-light);
 }
 
 .wrapUserContent {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 12px;
 }
 
@@ -29,19 +38,24 @@
 .connectionInfo {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .nameConnection {
   font-size: 16px;
-  margin-bottom: 4px;
 }
 
 .schoolInfo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: var(--neutral-600);
-  font-size: var(--font-size-small);
+  gap: 6px;
+  color: var(--neutral-700);
+  font-size: var(--font-size-medium);
+}
+
+.schoolInfo svg {
+  width: 18px;
+  height: 16px;
 }
 
 .connectionsButtons {
@@ -50,10 +64,17 @@
 }
 
 #confirmBtn {
-  background-color: var(--primary-purple);
-  color: var(--neutral-0);
+  padding: 12px 18px;
   border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
+  border-radius: 24px;
   cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-0);
+  background-color: var(--primary-purple);
+  transition: var(--transition);
+}
+
+#confirmBtn:hover {
+  background-color: var(--primary-purple-hover);
 }

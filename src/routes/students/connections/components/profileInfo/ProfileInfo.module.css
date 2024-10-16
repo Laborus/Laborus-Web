@@ -45,6 +45,19 @@
   color: #65676b;
 }
 
+.schoolInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--neutral-700);
+  font-size: var(--font-size-medium);
+}
+
+.schoolInfo svg {
+  width: 18px;
+  height: 16px;
+}
+
 .profileActions {
   display: flex;
   gap: 12px;

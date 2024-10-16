@@ -1,21 +1,35 @@
 /* Filter Buttons */
 .filterButtonsContainer {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 16px;
 }
 
 .filterButton {
-  padding: 10px 15px;
+  background-color: transparent;
   border: none;
-  border-radius: 20px;
-  background-color: var(--neutral-200);
+  color: var(--neutral-400);
+  padding: 10px 0;
   cursor: pointer;
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .filterButtonActive {
+  color: var(--primary-purple);
+}
+
+.filterButtonActive::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 100%;
   background-color: var(--primary-purple);
-  color: var(--neutral-0);
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s ease;
 }
