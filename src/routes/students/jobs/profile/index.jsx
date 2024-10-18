@@ -22,7 +22,7 @@ export default function ProfileInfo() {
         </div>
       </div>
       <div className={styles.profileActions}>
-        <button className={styles.addFriendBtn}>Candidatar-se</button>
+        <button className={styles.addFriendBtnApply}>Candidatar-se</button>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@
 }
 
 .modalContent {
-  background-color: var(--neutral100) !important;
+  background-color: var(--neutral-100);
   margin: 6% auto;
   padding: 24px 16px;
   border-radius: 16px;
@@ -57,12 +57,12 @@
 
 .feedBtn {
   background-color: transparent;
-  color: var(--primaryPurple);
-  border: 1px solid var(--primaryPurple);
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-purple);
   padding: 6px 12px;
   border-radius: 24px;
-  font-size: var(--fontSizeMedium);
-  font-weight: var(--fontWeightSemibold);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
 }
 
@@ -72,7 +72,7 @@
   top: 10px;
   right: 20px;
   font-size: 32px;
-  color: var(--neutral800);
+  color: var(--neutral-800);
   cursor: pointer;
   padding: 12px;
   border-radius: 50%;
@@ -100,13 +100,13 @@
 }
 
 .createPostTitle {
-  font-size: var(--fontSizeXLarge);
+  font-size: var(--font-size-xlarge);
 }
 
 .createPostText {
   height: 100px;
   max-height: 300px;
-  font-size: var(--fontSizeLargeMedium);
+  font-size: var(--font-size-large-medium);
   resize: none;
   overflow-y: auto;
 }
@@ -114,9 +114,9 @@
 /* Image Preview */
 .imagePreviewContainer {
   width: 100%;
-  margin-top: var(--marginSmall);
+  margin-top: var(--margin-small);
   text-align: center;
-  border: 1px solid var(--neutral400);
+  border: 1px solid var(--neutral-400);
   border-radius: 12px;
   padding: 8px;
   position: relative;
@@ -159,9 +159,9 @@
 
 .imageUploadBtn,
 .disableCommentsBtn {
-  background-color: var(--neutral300);
-  font-size: var(--fontSizeLargeMedium);
-  color: var(--neutral700);
+  background-color: var(--neutral-300);
+  font-size: var(--font-size-large-medium);
+  color: var(--neutral-700);
   display: flex;
   place-items: center;
   border: none;
@@ -171,28 +171,28 @@
 }
 
 .imageUploadBtn.disabled {
-  background-color: var(--neutral300);
-  color: var(--neutral700);
+  background-color: var(--neutral-300);
+  color: var(--neutral-700);
   cursor: not-allowed;
   opacity: 0.6; 
 }
 
 .publishBtn {
-  background-color: var(--primaryPurple);
-  color: var(--neutral0);
+  background-color: var(--primary-purple);
+  color: var(--neutral-0);
   border: none;
   padding: 16px 12px;
   border-radius: 12px;
   width: 100%;
   cursor: pointer;
-  font-size: var(--fontSizeLarge);
-  font-weight: var(--fontWeightSemibold);
-  margin-top: var(--marginSmall);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--margin-small);
   transition: var(--transition);
 }
 
 .publishBtn:disabled {
-  background-color: var(--neutral300);
-  color: var(--neutral600);
+  background-color: var(--neutral-300);
+  color: var(--neutral-600);
   cursor: not-allowed;
 }

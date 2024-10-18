@@ -1,16 +1,19 @@
 .chatSidebar {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    width: 300px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: var(--neutral-200);
+    border-right: 1px solid var(--neutral-300);
+    border-left: 1px solid var(--neutral-300);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-purple-light-medium) transparent;
   }
   
   .chatSidebarHeader {
     display: flex;
+    padding: 10px;
     flex-direction: column;
+    background-color: var(--neutral-0);
     gap: 16px;
   }
   
@@ -21,36 +24,40 @@
     margin-bottom: 10px;
   }
   
-  .filterButtons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .filterButton {
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .filterButton:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .filterButtonActive {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-  }
-  
-  .filterButtonActive:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
+.filterButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 16px;
+}
+
+.filterButton {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral-400);
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.filterButtonActive {
+  color: var(--primary-purple);
+}
+
+.filterButtonActive::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-purple);
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
   
   .searchBar {
     width: 100%;

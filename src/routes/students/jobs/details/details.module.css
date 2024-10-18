@@ -1,6 +1,6 @@
 .profileContent {
   width: 60%;
-  max-width: 100%;
+  min-width: 100%;
   max-height: 100vh;
   background-color: #fff;
   border-radius: 8px;
