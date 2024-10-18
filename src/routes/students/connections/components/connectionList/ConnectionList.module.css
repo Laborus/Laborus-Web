@@ -1,0 +1,80 @@
+@import "../../../../../styles/index.css";
+
+/* Styles for the Connection List Component */
+.connectionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connectionListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 16px;
+  border-bottom: 1px solid var(--neutral-200);
+  background-color: var(--neutral-0);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.connectionListItem:hover {
+  background-color: var(--primary-purple-light);
+}
+
+.wrapUserContent {
+  display: flex;
+  /* align-items: center; */
+  gap: 12px;
+}
+
+.wrapUserContent img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.connectionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nameConnection {
+  font-size: 16px;
+}
+
+.schoolInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--neutral-700);
+  font-size: var(--font-size-medium);
+}
+
+.schoolInfo svg {
+  width: 18px;
+  height: 16px;
+}
+
+.connectionsButtons {
+  display: flex;
+  align-items: center;
+}
+
+#confirmBtn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-0);
+  background-color: var(--primary-purple);
+  transition: var(--transition);
+}
+
+#confirmBtn:hover {
+  background-color: var(--primary-purple-hover);
+}

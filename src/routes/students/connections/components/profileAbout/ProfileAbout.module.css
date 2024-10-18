@@ -1,0 +1,62 @@
+/* Profile About */
+.profileAbout {
+  padding: 22px;
+}
+
+.aboutWrapper {
+  display: flex;
+  gap: 24px;
+}
+
+/* Tag Container */
+.tagContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background-color: var(--primary-purple);
+  color: var(--neutral-0);
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: var(--font-size-large);
+}
+
+/* About Section */
+.aboutSection {
+  background-color: rgba(129, 97, 176, 0.12);
+  border-radius: 12px;
+  padding: 20px;
+  width: 500px;
+}
+
+.aboutSection h2 {
+  font-size: var(--font-size-large-medium);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--margin-small);
+}
+
+.aboutSection p {
+  font-size: var(--font-size-large);
+  color: var(--neutral-700);
+}
+
+/* Course Section */
+.courseSection {
+  background-color: rgba(129, 97, 176, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.courseSection h2 {
+  font-size: var(--font-size-large-medium);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--margin-small);
+}
+
+.courseSection p {
+  font-size: var(--font-size-large);
+  color: var(--neutral-700);
+}
