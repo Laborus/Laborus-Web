@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "../../../../components/SearchBar";
+import SearchBar from "../../../../../components/SearchBar";
 import JobList from "../list";
 import styles from "./sidebar.module.css";
 

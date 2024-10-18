@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import JobSidebar from "./sidebar";
-import JobDetails from "./details";
+
 import styles from "./style.module.css";
+import JobSidebar from "./components/sidebar";
+import JobDetails from "./components/details";
 
 export default function Jobs() {
   const [activeFilter, setActiveFilter] = useState("students");
