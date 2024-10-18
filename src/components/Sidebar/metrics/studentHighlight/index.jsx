@@ -1,14 +1,14 @@
 import React from 'react';
-import './style.css'; 
+import styles from './studentHighlight.module.css';
 
 export default function StudentsHighlight({ title, icon, students }) {
   return (
-    <section className="students-highlight">
-      <div className="title-highlight">
+    <section className={styles.studentsHighlight}>
+      <div className={styles.titleHighlight}>
         {icon}
         <h3>{title}</h3>
       </div>
-      <div className="students-highlight-list">
+      <div className={styles.studentsHighlightList}>
         {students.map((student, index) => (
           <StudentHighlight
             key={index}
@@ -24,9 +24,9 @@ export default function StudentsHighlight({ title, icon, students }) {
 
 function StudentHighlight({ image, name, info }) {
   return (
-    <div className="student-info-highlight">
+    <div className={styles.studentInfoHighlight}>
       <img src={image} alt={name} />
-      <div className="student-info-text-container">
+      <div className={styles.studentInfoTextContainer}>
         <p>{name}</p>
         <span>{info}</span>
       </div>

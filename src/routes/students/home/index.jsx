@@ -1,5 +1,5 @@
-import PostList from "../../../components/Lists/post";
 import StudentMetrics from "../../../components/Sidebar/metrics";
+import PostList from "./post";
 import "./style.css";
 
 export default function HomePage() {

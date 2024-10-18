@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { TbLogout2 } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser , FaRegBookmark } from "react-icons/fa";
-import './style.css';
+import styles from './profile.module.css';
 import { LogoutModal } from '../logout';
 
 export default function ProfileSection() {
@@ -40,28 +40,28 @@ export default function ProfileSection() {
   }, [dropdownRef]);
 
   return (
-    <div className="profile-section" id="profile-dropdown-btn" onClick={toggleDropdown}>
+    <div className={`${styles.profileSection} ${isDropdownVisible ? styles.profileSectionActive : ''}`} onClick={toggleDropdown}>
       <img
         src="src/assets/images/user-laborus.jpeg"
         alt="Profile Picture"
-        className="profile-img"
+        className={styles.profileImg}
       />
-      <div className="profile-user-info">
-        <span className="profile-user-name">Ana Maria</span>
-        <span className="profile-user-role">Estudante</span>
+      <div className={styles.profileUserInfo}>
+        <span className={styles.profileUserName}>Ana Maria</span>
+        <span className={styles.profileUserRole}>Estudante</span>
       </div>
       {isDropdownVisible && (
-        <div ref={dropdownRef} className="profile-dropdown">
-          <div className="menu-item">
+        <div ref={dropdownRef} className={styles.profileDropdown}>
+          <div className={styles.dropdownItem}>
             <FaRegUser/> Perfil
           </div>
-          <div className="menu-item">
+          <div className={styles.dropdownItem}>
             <FaRegBookmark/> Salvos
           </div>
-          <div className="menu-item">
+          <div className={styles.dropdownItem}>
             <IoSettingsOutline/> Configurações
           </div>
-          <div id="logout-btn" className="menu-item" onClick={openLogoutModal}>
+          <div className={`${styles.dropdownItem} ${styles.dropdownItemLastChild}`} onClick={openLogoutModal}>
             <TbLogout2 />
             Sair
           </div>

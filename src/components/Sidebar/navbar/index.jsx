@@ -5,7 +5,7 @@ import { HiOutlineChatAlt } from "react-icons/hi";
 import { GoHome } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-import "./style.css";
+import styles from "./navbar.module.css";
 import { PostModal } from "../../Post/createPost";
 import ProfileSection from "./profile";
 import { LogoutModal } from "./logout";
@@ -16,12 +16,12 @@ export default function NavBar() {
 
   return (
     <>
-      <aside className="sidebar">
-        <div className="logo">
+      <aside className={styles.sidebar}>
+        <div className={styles.logo}>
           <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
         </div>
 
-        <nav className="nav-menu">
+        <nav className={styles.navMenu}>
           <NavLinkItem to="/" icon={<GoHome />} text="Página inicial" />
           <NavLinkItem to="/connections" icon={<FaRegUser />} text="Conexões" />
           <NavLinkItem to="/jobs" icon={<MdWorkOutline />} text="Vagas" />
@@ -31,15 +31,15 @@ export default function NavBar() {
             to="/notifications"
             icon={<IoMdNotificationsOutline />}
             text="Notificações"
-            extraText={<span className="notification-count-item">2</span>}
+            extraText={<span className={styles.extraText}>2</span>}
           />
         </nav>
 
-        <button className="btn-create-post" onClick={() => setPostModal(true)}>
+        <button className={styles.btnCreatePost} onClick={() => setPostModal(true)}>
           Criar publicação
         </button>
 
-        <ProfileSection/>
+        <ProfileSection />
         {postModal && <PostModal onClose={() => setPostModal(false)} />}
         {logoutModal && <LogoutModal onClose={() => setLogoutModal(false)} />}
       </aside>
@@ -50,10 +50,10 @@ export default function NavBar() {
 const NavLinkItem = ({ to, icon, text, extraText }) => (
   <NavLink
     to={to}
-    className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
+    className={({ isActive }) => (isActive ? `${styles.navItem} ${styles.navItemActive}` : styles.navItem)}
   >
     {icon}
     {text}
-    {extraText && <span className="extra-text">{extraText}</span>}
+    {extraText && <span className={styles.extraText}>{extraText}</span>}
   </NavLink>
 );

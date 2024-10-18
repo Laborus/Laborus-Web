@@ -1,0 +1,71 @@
+.chatSidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--neutral-200);
+    border-right: 1px solid var(--neutral-300);
+    border-left: 1px solid var(--neutral-300);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-purple-light-medium) transparent;
+  }
+  
+  .chatSidebarHeader {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    background-color: var(--neutral-0);
+    gap: 16px;
+  }
+  
+  .chatTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+.filterButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 16px;
+}
+
+.filterButton {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral-400);
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.filterButtonActive {
+  color: var(--primary-purple);
+}
+
+.filterButtonActive::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-purple);
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+  
+  .searchBar {
+    width: 100%;
+  }
+  
+  .chatSidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  

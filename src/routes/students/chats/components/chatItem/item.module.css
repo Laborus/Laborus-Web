@@ -1,0 +1,73 @@
+.chatListItem {
+    position: relative;
+    padding: 12px 18px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    color: var(--neutral-700);
+    background-color: var(--neutral-0);
+    border-bottom: 1px solid var(--neutral-200);
+    gap: 12px;
+    transition: var(--transition);
+  }
+  
+  .chatListItem:hover {
+    background-color: var(--primary-purple-light);
+  }
+  
+  .chatListItem.active {
+    background-color: var(--primary-purple-light-medium);
+    color: var(--neutral-100);
+  }
+  
+  .chatListItem.active .lastMessage,
+  .chatListItem.active .chatTime {
+    color: var(--neutral-200);
+  }
+  
+  .chatListItem .lastMessage,
+  .chatListItem .chatTime {
+    color: var(--neutral-600);
+  }
+  
+  .chatListItem img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .statusIndicator {
+    position: absolute;
+    top: 40%;
+    left: 13%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--neutral-0);
+    background-color: var(--neutral-600);
+  }
+  
+  .statusIndicator.online {
+    background-color: var(--green);
+  }
+  
+  .chatInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .nameChat {
+    font-size: var(--font-size-large);
+  }
+  
+  .lastMessage {
+    font-size: var(--font-size-medium);
+  }
+  
+  .chatTime {
+    margin-left: auto;
+    font-size: var(--font-size-small);
+  }
+  
