@@ -9,6 +9,7 @@ import Jobs from "./routes/students/jobs";
 import HomePage from "./routes/students/home";
 import Challenges from "./routes/students/challenges/index..";
 import ChatPages from "./routes/students/chats";
+import Login from "./routes/login";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       { path: "/chats", element: <ChatPages /> },
       { path: "/challenges", element: <Challenges /> },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
