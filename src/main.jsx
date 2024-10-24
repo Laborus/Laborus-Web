@@ -12,6 +12,7 @@ import ChatPages from "./routes/students/chats";
 import Login from "./routes/login";
 import Register from "./routes/register/accountChoice";
 import Register2 from "./routes/register/studentRegister";
+import Register3 from "./routes/register/selectTags";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/register2",
     element: <Register2 />,
+  },
+  {
+    path: "/register3",
+    element: <Register3 />,
   },
 ]);
 
