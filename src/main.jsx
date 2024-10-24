@@ -13,6 +13,7 @@ import Login from "./routes/login";
 import Register from "./routes/register/accountChoice";
 import Register2 from "./routes/register/studentRegister";
 import Register3 from "./routes/register/selectTags";
+import Register4 from "./routes/register/profileDetails";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/register3",
     element: <Register3 />,
+  },
+  {
+    path: "/register4",
+    element: <Register4 />,
   },
 ]);
 
