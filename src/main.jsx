@@ -10,6 +10,7 @@ import HomePage from "./routes/students/home";
 import Challenges from "./routes/students/challenges/index..";
 import ChatPages from "./routes/students/chats";
 import Login from "./routes/login";
+import Register from "./routes/register/AccountChoice";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
