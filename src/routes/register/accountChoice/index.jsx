@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import laborusLogo from "/laborus-logotipo-42x42.png";
-import studentImage from "../../assets/images/fatec-image.png";
-import companyImage from "../../assets/images/fatec-image.png";
-import schoolImage from "../../assets/images/fatec-image.png";
+import studentImage from "../../../assets/images/fatec-image.png";
+import companyImage from "../../../assets/images/fatec-image.png";
+import schoolImage from "../../../assets/images/fatec-image.png";
 import { FaArrowLeft } from "react-icons/fa";
 
-import styles from "./AccountChoice.module.css";
+import styles from "./style.module.css";
 
 export default function AccountChoice() {
   const [selectedOption, setSelectedOption] = useState("");

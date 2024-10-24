@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   height: 100vh;
+  flex-direction: row;
 }
 
 .groupBox {
@@ -24,8 +25,7 @@
   height: 42px;
 }
 
-/* Back Button */
-
+/* Botão Voltar */
 .backButton {
   color: var(--primary-purple);
   text-decoration: none;
@@ -40,7 +40,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin-right: var(--margin-xsmall);
   background-color: var(--neutral-200);
   padding: 10px;
@@ -136,8 +135,7 @@
   font-size: var(--font-size-xlarge);
 }
 
-/* Loader Animation */
-
+/* Animação de carregamento */
 .loadingOverlay {
   position: fixed;
   top: 0;
@@ -166,5 +164,30 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .groupBox {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: var(--font-size-large);
+  }
+
+  .options {
+    flex-direction: column;
+  }
+
+  .sideBanner {
+    display: none;
   }
 }
