@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import laborusLogo from "/laborus-logotipo-42x42.png";
-import studentImage from "../../../assets/images/fatec-image.png";
-import companyImage from "../../../assets/images/fatec-image.png";
-import schoolImage from "../../../assets/images/fatec-image.png";
+import studentImage from "../../../assets/images/student-image.png";
+import companyImage from "../../../assets/images/company-image.png";
+import schoolImage from "../../../assets/images/school-image.png";
 import { FaArrowLeft } from "react-icons/fa";
 
 import styles from "./style.module.css";

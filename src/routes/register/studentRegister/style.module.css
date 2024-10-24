@@ -173,3 +173,55 @@
     transform: rotate(360deg);
   }
 }
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .loginBox,
+  .sideBanner {
+    width: 100%;
+    height: auto;
+  }
+
+  .loginBox {
+    padding: 20px;
+    border-radius: 0; /* Remove cantos arredondados para dispositivos pequenos */
+  }
+
+  .title,
+  .titleDetails {
+    text-align: center;
+    font-size: var(--font-size-large); /* Ajuste para telas menores */
+  }
+
+  .submitButton {
+    font-size: var(--font-size-medium);
+  }
+
+  .sideBanner {
+    display: none; /* Oculta o banner em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .loginBox {
+    padding: 16px;
+  }
+
+  .inputBox input {
+    padding: 12px 16px;
+    font-size: var(--font-size-medium);
+  }
+
+  .inputBox i {
+    font-size: var(--font-size-medium);
+  }
+
+  .submitButton {
+    padding: 12px;
+    border-radius: 32px;
+  }
+}
