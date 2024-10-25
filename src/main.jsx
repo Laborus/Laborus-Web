@@ -14,6 +14,7 @@ import Register from "./routes/register/accountChoice";
 import Register2 from "./routes/register/studentRegister";
 import Register3 from "./routes/register/selectTags";
 import Register4 from "./routes/register/profileDetails";
+import Register5 from "./routes/register/verification";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/register4",
     element: <Register4 />,
+  },
+  {
+    path: "/register5",
+    element: <Register5 />,
   },
 ]);
 
