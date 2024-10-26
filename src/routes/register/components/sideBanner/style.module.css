@@ -1,0 +1,16 @@
+.sideBanner {
+  width: 50%;
+  background-color: var(--primary-purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--neutral-0);
+  font-size: var(--font-size-xlarge);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .sideBanner {
+    display: none;
+  }
+}

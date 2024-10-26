@@ -1,11 +1,19 @@
+// pages/AccountChoice.jsx
 import React, { useState } from "react";
-import laborusLogo from "/laborus-logotipo-42x42.png";
+import Logo from "../components/logo";
+import BackButton from "../components/backButton";
+import Title from "../components/title";
+import SubmitButton from "../components/submitButton";
+import LoadingOverlay from "../components/loadingOverlay";
+import Container from "../components/container";
+import GroupBox from "../components/groupBox";
+import SideBanner from "../components/sideBanner";
+
 import studentImage from "../../../assets/images/student-image.png";
 import companyImage from "../../../assets/images/company-image.png";
 import schoolImage from "../../../assets/images/school-image.png";
-import { FaArrowLeft } from "react-icons/fa";
 
-import styles from "./style.module.css";
+import styles from "./style.module.css"; // Mantendo o CSS da página
 
 export default function AccountChoice() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -18,22 +26,18 @@ export default function AccountChoice() {
     alert(`Opção selecionada: ${selectedOption}`);
   };
 
+  const backButtonUrl = "/login"; // Pode ser alterado dinamicamente
+
   return (
-    <div className={styles.container}>
-      <div className={styles.groupBox}>
-        <div className={styles.logo}>
-          <img src={laborusLogo} alt="Logotipo Laborus" />
-        </div>
-        <a href="/login" className={styles.backButton}>
-          <div>
-            <FaArrowLeft />
-          </div>
-          Voltar
-        </a>
-        <h1 className={styles.title}>Escolha a sua conta</h1>
-        <p className={styles.titleDetails}>
-          Selecione a opção que corresponde ao tipo de conta que deseja.
-        </p>
+    <Container>
+      <GroupBox>
+        <Logo />
+        <BackButton href={backButtonUrl} />
+        <Title
+          title="Escolha a sua conta"
+          details="Selecione a opção que corresponde ao tipo de conta que deseja."
+        />
+
         <div className={styles.options}>
           <div
             className={`${styles.option} ${
@@ -44,6 +48,7 @@ export default function AccountChoice() {
             <img src={studentImage} alt="Estudante" />
             <p>Estudante</p>
           </div>
+
           <div
             className={`${styles.option} ${
               selectedOption === "empresa" ? styles.selected : ""
@@ -53,6 +58,7 @@ export default function AccountChoice() {
             <img src={companyImage} alt="Empresa" />
             <p>Empresa</p>
           </div>
+
           <div
             className={`${styles.option} ${
               selectedOption === "instituicao" ? styles.selected : ""
@@ -63,19 +69,12 @@ export default function AccountChoice() {
             <p>Instituição</p>
           </div>
         </div>
-        <button
-          type="button"
-          className={styles.submitButton}
-          onClick={handleSubmit}
-          disabled={!selectedOption}
-        >
-          Continuar
-        </button>
-      </div>
-      <div className={styles.sideBanner}></div>
-      <div id="loading-overlay" className={styles.loadingOverlay}>
-        <div className={styles.loader}></div>
-      </div>
-    </div>
+
+        <SubmitButton onClick={handleSubmit} disabled={!selectedOption} />
+      </GroupBox>
+
+      <SideBanner />
+      <LoadingOverlay />
+    </Container>
   );
 }
