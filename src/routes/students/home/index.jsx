@@ -4,11 +4,11 @@ import "./style.css";
 
 export default function HomePage() {
   return (
-    <>
+    <section className="wrapperHome">
       <div className="content">
         <PostList />
       </div>
       <StudentMetrics />
-    </>
+    </section>
   );
 }

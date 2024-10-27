@@ -31,7 +31,7 @@ export default function NavBar() {
             to="/notifications"
             icon={<IoMdNotificationsOutline />}
             text="Notificações"
-            extraText={<span className={styles.extraText}>2</span>}
+            extraText={2}
           />
         </nav>
 

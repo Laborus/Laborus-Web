@@ -45,7 +45,7 @@ const companies = [
 const institutions = [
   {
     name: "E.E. Dona Maria Alice",
-    image: "src/assets/images/fatec-image.png", //src/assets/images/fatec-image.png
+    image: "src/assets/images/fatec-image.png", 
     details: [
       { icon: <FaMapMarkerAlt />, text: "Carapicuíba | São Paulo" },
       { icon: <FaUsers />, text: "3.321 Seguidores" },
@@ -58,10 +58,10 @@ export default function Connections() {
   const [activeFilter, setActiveFilter] = useState("students");
 
   return (
-    <div className={styles.chatContainer}>
+    <div className="wrapper">
       <aside className="chat-sidebar">
         <header className="chat-sidebar-header">
-          <h1 className="chat-title">Conexões</h1>
+          <h1 className="chat-title">Desafios</h1>
           <SearchBar />
           <FilterButtons
             activeFilter={activeFilter}
