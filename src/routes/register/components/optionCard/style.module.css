@@ -1,9 +1,3 @@
-.options {
-  display: flex;
-  gap: 12px;
-  justify-content: space-between;
-}
-
 .option {
   text-align: center;
   padding: 8px;
@@ -33,11 +27,4 @@
 .option.selected {
   border: 2px solid var(--primary-purple);
   background-color: var(--neutral-200);
-}
-
-/* Ajuste para telas menores */
-@media (max-width: 768px) {
-  .options {
-    flex-direction: column;
-  }
 }

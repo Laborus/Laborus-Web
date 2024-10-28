@@ -1,7 +1,14 @@
 // Register.jsx
 import React, { useState } from "react";
+import Container from "../components/container";
+import GroupBox from "../components/groupBox";
+import Logo from "../components/logo";
+import Title from "../components/title";
+import SubmitButton from "../components/submitButton";
+import LoadingOverlay from "../components/loadingOverlay";
+import SideBanner from "../components/sideBanner";
+import BackButton from "../components/backButton"; // Importando o BackButton
 import styles from "./style.module.css";
-import logo from "/laborus-logotipo-42x42.png";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,16 +22,14 @@ export default function Register() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.loginBox}>
-        <div className={styles.logo}>
-          <img src={logo} alt="Logotipo Laborus" />
-        </div>
-        <h1 className={styles.title}>Junte-se a Laborus!</h1>
-        <p className={styles.titleDetails}>
-          Cadastre-se na plataforma... É de graça.
-        </p>
-
+    <Container>
+      <GroupBox>
+        <Logo />
+        <BackButton href="#" />
+        <Title
+          title="Junte-se a Laborus!"
+          details="Cadastre-se na plataforma... É de graça."
+        />
         <form id="register-form" onSubmit={handleSubmit}>
           <div className={styles.inputBox}>
             <input
@@ -68,11 +73,8 @@ export default function Register() {
             </span>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Continuar
-          </button>
+          <SubmitButton type="submit" />
         </form>
-
         <p className={`${styles.registerLink} ${styles.termsPrivacy}`}>
           Clicando em Criar conta, você concorda com os{" "}
           <a href="../login/login.html">Termos de Uso</a> e confirma que você
@@ -81,15 +83,9 @@ export default function Register() {
         <p className={styles.registerLink}>
           Já possui uma conta? <a href="../login/login.html">Faça Login</a>.
         </p>
-      </div>
-
-      <div className={styles.sideBanner}></div>
-
-      {isLoading && (
-        <div className={styles.loadingOverlay}>
-          <div className={styles.loader}></div>
-        </div>
-      )}
-    </div>
+      </GroupBox>
+      <SideBanner />
+      {isLoading && <LoadingOverlay />}
+    </Container>
   );
 }

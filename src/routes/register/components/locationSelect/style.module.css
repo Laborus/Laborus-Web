@@ -1,0 +1,18 @@
+.locationSelect {
+  margin-bottom: var(--margin-small);
+}
+
+.inputSelect {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: var(--font-size-large);
+  color: var(--neutral-700);
+  border: 2px solid var(--neutral-200);
+  border-radius: 12px;
+  background-color: var(--neutral-200);
+}
+
+.inputSelect:focus {
+  border: 2px solid var(--primary-purple);
+  outline: none;
+}

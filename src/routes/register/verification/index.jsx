@@ -1,22 +1,22 @@
 // src/components/VerificationPage.jsx
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import Container from "../components/container";
+import GroupBox from "../components/groupBox";
+import Logo from "../components/logo";
+import Title from "../components/title";
+import SubmitButton from "../components/submitButton";
+import SideBanner from "../components/sideBanner";
+import LoadingOverlay from "../components/loadingOverlay";
+import BackButton from "../components/backButton"; // Importando o BackButton
 import styles from "./style.module.css";
 
 export default function VerificationPage() {
   return (
-    <div className={styles.container}>
-      <div className={styles.box}>
-        <div className={styles.logo}>
-          <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
-        </div>
-        <a href="#" className={styles.backButton}>
-          <div>
-            <FaArrowLeft />
-          </div>
-          Voltar
-        </a>
-        <h1 className={styles.title}>Etapa de Verificação</h1>
+    <Container>
+      <GroupBox>
+        <Logo />
+        <BackButton href="#" />
+        <Title title="Etapa de Verificação" />
         <p className={styles.titleDetails}>
           Enviamos um código de verificação para{" "}
           <strong>usuario@gmail.com</strong>.
@@ -52,18 +52,14 @@ export default function VerificationPage() {
               required
             />
           </div>
-          <button type="submit" className={styles.submitButton} disabled>
-            Confirmar
-          </button>
+          <SubmitButton type="submit" />
         </form>
         <p className={styles.registerLink}>
           Não recebeu o código? <a href="#">Reenviar.</a>
         </p>
-      </div>
-      <div className={styles.sideBanner}></div>
-      <div id="loading-overlay" className={styles.loadingOverlay}>
-        <div className={styles.loader}></div>
-      </div>
-    </div>
+      </GroupBox>
+      <SideBanner />
+      <LoadingOverlay />
+    </Container>
   );
 }

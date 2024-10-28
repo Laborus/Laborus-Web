@@ -1,0 +1,21 @@
+.aboutSection textarea {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: var(--font-size-large);
+  border: 2px solid var(--neutral-200);
+  border-radius: 12px;
+  height: 100px;
+  resize: none;
+  background-color: var(--neutral-200);
+}
+
+.aboutSection textarea:focus {
+  border: 2px solid var(--primary-purple);
+  outline: none;
+}
+
+#charCount {
+  text-align: right;
+  font-size: var(--font-size-small);
+  color: var(--neutral-600);
+}

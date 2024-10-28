@@ -1,0 +1,12 @@
+.options {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .options {
+    flex-direction: column;
+  }
+}

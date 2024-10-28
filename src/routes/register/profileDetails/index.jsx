@@ -1,6 +1,17 @@
+// pages/ProfileDetails.jsx
 import React, { useState, useEffect } from "react";
-import styles from "./style.module.css";
-import { FaArrowLeft } from "react-icons/fa";
+import Logo from "../components/logo";
+import BackButton from "../components/backButton";
+import Title from "../components/title";
+import SubmitButton from "../components/submitButton";
+import LoadingOverlay from "../components/loadingOverlay";
+import Container from "../components/container";
+import GroupBox from "../components/groupBox";
+import SideBanner from "../components/sideBanner";
+
+import ImageUpload from "../components/ImageUpload";
+import LocationSelect from "../components/LocationSelect";
+import AboutSection from "../components/AboutSection";
 
 export default function ProfileDetails() {
   const [selectedImage, setSelectedImage] = useState(
@@ -12,7 +23,7 @@ export default function ProfileDetails() {
   const [selectedMunicipio, setSelectedMunicipio] = useState("");
 
   useEffect(() => {
-    // Simulação de carregamento de municípios (pode ser trocado por uma requisição real)
+    // Carregamento de municípios (simulado)
     setMunicipios(["São Paulo", "Rio de Janeiro", "Belo Horizonte"]);
   }, []);
 
@@ -36,79 +47,37 @@ export default function ProfileDetails() {
     console.log("Formulário enviado!");
   };
 
+  const backButtonUrl = "/home"; // Pode ser alterado dinamicamente
+
   return (
-    <div className={styles.container}>
-      <div className={styles.groupBox}>
-        <div className={styles.logo}>
-          <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
-        </div>
-        <a href="#" className={styles.backButton}>
-          <div>
-            <FaArrowLeft />
-          </div>
-          Voltar
-        </a>
-        <h1 className={styles.title}>Detalhes do perfil</h1>
-        <p className={styles.titleDetails}>
-          Escolha uma foto para o seu perfil e adicione detalhes ao seu usuário.
-        </p>
+    <Container>
+      <GroupBox>
+        <Logo />
+        <BackButton href={backButtonUrl} />
+        <Title
+          title="Detalhes do perfil"
+          details="Escolha uma foto para o seu perfil e adicione detalhes ao seu usuário."
+        />
         <form id="profile-form" onSubmit={handleSubmit}>
-          <div className={styles.imageUpload}>
-            <label htmlFor="profileImage">
-              <img
-                id="profileImagePreview"
-                src={selectedImage}
-                alt="Imagem de perfil"
-              />
-            </label>
-            <input
-              type="file"
-              id="profileImage"
-              accept="image/*"
-              onChange={handleImageChange}
-              style={{ display: "none" }}
-            />
-          </div>
-
-          <div className={styles.locationSelect}>
-            <select
-              className={styles.inputSelect}
-              id="municipiosSelect"
-              value={selectedMunicipio}
-              onChange={(e) => setSelectedMunicipio(e.target.value)}
-              aria-label="Localização"
-            >
-              <option value="" disabled>
-                Localização
-              </option>
-              {municipios.map((municipio) => (
-                <option key={municipio} value={municipio}>
-                  {municipio}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className={styles.aboutSection}>
-            <textarea
-              id="about"
-              value={about}
-              onChange={handleAboutChange}
-              placeholder="Sobre"
-              maxLength="200"
-            />
-            <div id={styles["charCount"]}>{charCount}/200</div>
-          </div>
-
-          <button type="submit" className={styles.submitButton}>
-            Continuar
-          </button>
+          <ImageUpload
+            selectedImage={selectedImage}
+            onImageChange={handleImageChange}
+          />
+          <LocationSelect
+            municipios={municipios}
+            selectedMunicipio={selectedMunicipio}
+            onSelectChange={setSelectedMunicipio}
+          />
+          <AboutSection
+            about={about}
+            charCount={charCount}
+            onAboutChange={handleAboutChange}
+          />
+          <SubmitButton disabled={!selectedMunicipio || !about} />
         </form>
-      </div>
-      <div className={styles.sideBanner}></div>
-      <div id="loadingOverlay" className={styles.loadingOverlay}>
-        <div className={styles.loader}></div>
-      </div>
-    </div>
+      </GroupBox>
+      <SideBanner />
+      <LoadingOverlay />
+    </Container>
   );
 }

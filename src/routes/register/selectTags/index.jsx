@@ -1,21 +1,30 @@
+// pages/SelectTags.jsx
 import React, { useState, useEffect } from "react";
+import Container from "../components/container";
+import GroupBox from "../components/groupBox";
+import Logo from "../components/logo";
+import BackButton from "../components/backButton";
+import Title from "../components/title";
+import SubmitButton from "../components/submitButton";
+import SideBanner from "../components/sideBanner";
+import LoadingOverlay from "../components/loadingOverlay";
 import styles from "./style.module.css";
-import { FaArrowLeft } from "react-icons/fa";
+
+// Definição das tags disponíveis
+const tags = [
+  { value: "tecnologia", label: "Tecnologia" },
+  { value: "estudar", label: "Estudar" },
+  { value: "livros", label: "Livros" },
+  { value: "financeiro", label: "Financeiro" },
+  { value: "historia", label: "História" },
+  { value: "robotica", label: "Robótica" },
+  { value: "sociologia", label: "Sociologia" },
+  { value: "matematica", label: "Matemática" },
+];
 
 export default function SelectTags() {
   const [selectedTags, setSelectedTags] = useState([]);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-
-  const tags = [
-    { value: "tecnologia", label: "Tecnologia" },
-    { value: "estudar", label: "Estudar" },
-    { value: "livros", label: "Livros" },
-    { value: "financeiro", label: "Financeiro" },
-    { value: "historia", label: "História" },
-    { value: "robotica", label: "Robótica" },
-    { value: "sociologia", label: "Sociologia" },
-    { value: "matematica", label: "Matemática" },
-  ];
 
   // Verifica se o botão "Continuar" deve ser habilitado
   useEffect(() => {
@@ -30,30 +39,22 @@ export default function SelectTags() {
     }
   };
 
-  const isSelected = (value) => selectedTags.includes(value);
-
   const handleSubmit = () => {
     console.log("Tags selecionadas:", selectedTags);
-    // Aqui você pode adicionar a lógica para enviar os dados ou redirecionar o usuário.
+    // Lógica adicional para enviar ou redirecionar
   };
 
+  const isSelected = (value) => selectedTags.includes(value);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.groupBox}>
-        <div className={styles.logo}>
-          <img src="/laborus-logotipo-42x42.png" alt="Logotipo Laborus" />
-        </div>
-        <a href="#" className={styles.backButton}>
-          <div>
-            <FaArrowLeft />
-          </div>
-          Voltar
-        </a>
-        <h1 className={styles.title}>Selecione suas tags</h1>
-        <p className={styles.titleDetails}>
-          Escolha <strong>3</strong> estilos/interesses que mais combinam com
-          você - Poderá alterá-los mais tarde.
-        </p>
+    <Container>
+      <GroupBox>
+        <Logo />
+        <BackButton href="#" />
+        <Title
+          title="Selecione suas tags"
+          details="Escolha 3 estilos/interesses que mais combinam com você - Poderá alterá-los mais tarde."
+        />
         <div className={styles.tagsContainer}>
           {tags.map((tag) => (
             <div
@@ -67,19 +68,14 @@ export default function SelectTags() {
             </div>
           ))}
         </div>
-        <button
-          type="button"
-          className={styles.submitButton}
+        <SubmitButton
           onClick={handleSubmit}
           disabled={!isButtonEnabled}
-        >
-          Continuar
-        </button>
-      </div>
-      <div className={styles.sideBanner}></div>
-      <div id="loading-overlay" className={styles.loadingOverlay}>
-        <div className={styles.loader}></div>
-      </div>
-    </div>
+          label="Continuar"
+        />
+      </GroupBox>
+      <SideBanner />
+      <LoadingOverlay />
+    </Container>
   );
 }
