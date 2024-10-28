@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SearchBar from "../../../components/SearchBar";
-import FilterButtonsChallenge from "./filterButton";
-import ChallengesList from "./challengesList";
-import StudentMetrics from "../../../components/Sidebar/metrics";
+import FilterButtonsChallenge from "./components/filterButton";
+import ChallengesList from "./components/challengesList";
+import ChallengesSideBar from "./components/details";
 
 
 const challenges = [
@@ -25,16 +25,16 @@ export default function ChallengesPage() {
 
   return (
     <section className="wrapper">
-      <aside className="chat-sidebar">
+      <div className="chat-sidebar">
         <header className="chat-sidebar-header">
-          <h1 className="chat-title">Conexões</h1>
+          <h1 className="chat-title">Desafios</h1>
           <SearchBar />
           <FilterButtonsChallenge activeFilter={activeFilter} onFilterClick={setActiveFilter} />
         </header>
 
         <ChallengesList items={filteredChallenges} />
-      </aside>
-      <StudentMetrics />
+      </div>
+      <ChallengesSideBar />
     </section>
   );
 }
