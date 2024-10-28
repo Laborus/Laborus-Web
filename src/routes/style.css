@@ -1,12 +1,17 @@
 body {
-    background-color: var(--neutral-0);
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
+  background-color: var(--neutral-0);
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
 .container {
-    display: flex;
-    min-height: 100vh;   
-    justify-content: center;
-    gap: 14px;
+  display: flex;
+  min-height: 100vh;
+  gap: 14px;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }

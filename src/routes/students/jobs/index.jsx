@@ -8,7 +8,7 @@ export default function Jobs() {
   const [activeFilter, setActiveFilter] = useState("students");
 
   return (
-    <div className={styles.jobContainer}>
+    <div className="wrapper">
       <JobSidebar activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
       <JobDetails />
     </div>

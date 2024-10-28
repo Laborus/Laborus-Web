@@ -20,7 +20,7 @@ export default function ConnectionList({ type, items, active }) {
             </div>
           </div>
           <div className={styles.connectionsButtons}>
-            <button id={styles.confirmBtn}>{item.buttonLabel}</button>
+            <button className={styles.confirmBtn}>{item.buttonLabel}</button>
           </div>
         </li>
       ))}

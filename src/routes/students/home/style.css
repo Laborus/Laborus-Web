@@ -1,9 +1,12 @@
 .content {
-    flex: 1;
     padding: 8px 12px;
-    background-color: var(--neutral-300);
+    background-color: var(--neutral-200);
     overflow-y: hidden;
     scroll-behavior: smooth;
-    max-width: 600px;
-  }
-  
+}
+
+.wrapperHome{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 1fr;
+}
