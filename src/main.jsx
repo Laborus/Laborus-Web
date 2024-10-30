@@ -10,11 +10,12 @@ import HomePage from "./routes/students/home";
 import Challenges from "./routes/students/challenges/index..";
 import ChatPages from "./routes/students/chats";
 import Login from "./routes/login";
-import Register from "./routes/register/accountChoice";
-import Register2 from "./routes/register/studentRegister";
-import Register3 from "./routes/register/selectTags";
-import Register4 from "./routes/register/profileDetailsCompanyAndSchool";
-import Register5 from "./routes/register/profileDetailsStudent";
+import AccountChoice from "./routes/register/accountChoice";
+import StudentRegister from "./routes/register/studentRegister";
+import SelectTags from "./routes/register/selectTags";
+import ProfileDetailsCompanyAndSchool from "./routes/register/profileDetailsCompanyAndSchool";
+import ProfileDetailsStudent from "./routes/register/profileDetailsStudent";
+import CompanyAndSchoolRegister from "./routes/register/companyAndSchoolRegister";
 
 const router = createBrowserRouter([
   {
@@ -34,24 +35,28 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/register",
-    element: <Register />,
+    path: "/register/accountChoice",
+    element: <AccountChoice />,
   },
   {
-    path: "/register2",
-    element: <Register2 />,
+    path: "/register/student",
+    element: <StudentRegister />,
   },
   {
-    path: "/register3",
-    element: <Register3 />,
+    path: "/register/SelectTags",
+    element: <SelectTags />,
   },
   {
-    path: "/register4",
-    element: <Register4 />,
+    path: "/register/companyAndSchool/profileDetails",
+    element: <ProfileDetailsCompanyAndSchool />,
   },
   {
-    path: "/register5",
-    element: <Register5 />,
+    path: "/register/student/profileDetails",
+    element: <ProfileDetailsStudent />,
+  },
+  {
+    path: "/register/companyAndSchool",
+    element: <CompanyAndSchoolRegister />,
   },
 ]);
 
