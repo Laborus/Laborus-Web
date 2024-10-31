@@ -17,6 +17,7 @@ import ProfileDetailsCompanyAndSchool from "./routes/register/profileDetailsComp
 import ProfileDetailsStudent from "./routes/register/profileDetailsStudent";
 import CompanyAndSchoolRegister from "./routes/register/companyAndSchoolRegister";
 import Password from "./routes/register/password";
+import Contact from "./routes/register/contact";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/register/password",
     element: <Password />,
+  },
+  {
+    path: "/register/contact",
+    element: <Contact />,
   },
 ]);
 
