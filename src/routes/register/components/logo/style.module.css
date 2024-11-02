@@ -1,0 +1,9 @@
+.logo {
+  margin-bottom: var(--margin-small);
+  text-align: left;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+}

@@ -9,7 +9,7 @@ export default function JobDetails() {
   return (
     <main className={styles.profileContent}>
       <div className={styles.coverPhoto}>
-        <img src="src/assets/images/post-example-2.jpeg" alt="Cover Photo" />
+        <img src="/post-example-2.jpeg" alt="Cover Photo" />
       </div>
       <ProfileInfo />
       <div className={styles.jobsDetails}>

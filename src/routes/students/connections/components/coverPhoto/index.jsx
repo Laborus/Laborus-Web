@@ -6,7 +6,7 @@ import styles from "./CoverPhoto.module.css";
 function CoverPhoto() {
   return (
     <div className={styles.coverPhoto}>
-      <img src="src/assets/images/post-example-2.jpeg" alt="Cover" />
+      <img src="/post-example-2.jpeg" alt="Cover" />
     </div>
   );
 }

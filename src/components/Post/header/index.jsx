@@ -30,7 +30,7 @@ export default function PostHeader({ post }) {
 
   return (
     <header className={styles.postHeader}>
-      <img src="src/assets/images/user-laborus.jpeg" alt="Profile Picture" className={styles.postProfileImg} />
+      <img src="/user-laborus.jpeg" alt="Profile Picture" className={styles.postProfileImg} />
       <div className={styles.postInfo}>
         <div className={styles.postedBy}>
           <h2 className={styles.postUsername}>{post.username}</h2>

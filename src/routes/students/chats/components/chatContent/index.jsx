@@ -17,7 +17,7 @@ export default function ChatContent() {
         <div className={styles.userInfo}>
           <img
             className={styles.userPicture}
-            src="src/assets/images/user-laborus.jpeg"
+            src="/user-laborus.jpeg"
             alt="Profile"
           />
           <div className={styles.userInfoText}>

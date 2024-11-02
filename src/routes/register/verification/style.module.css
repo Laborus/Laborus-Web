@@ -1,0 +1,71 @@
+.titleDetails {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-700);
+  margin-bottom: var(--margin-large);
+  text-align: center;
+}
+
+.otpContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--margin-large);
+  gap: 24px;
+}
+
+.otpInput {
+  width: 15%;
+  padding: 32px 16px;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-regular);
+  text-align: center;
+  background-color: #dfe1e5;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  outline: none;
+}
+
+.otpInput:focus {
+  border-color: var(--primary-purple);
+}
+
+.registerLink {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-700);
+  text-align: center;
+  margin-top: var(--margin-large);
+}
+
+.registerLink a {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .titleDetails {
+    font-size: var(--font-size-medium); /* Reduz o tamanho da fonte */
+  }
+
+  .registerLink {
+    font-size: var(--font-size-small); /* Reduz o tamanho da fonte */
+  }
+}
+
+@media (max-width: 480px) {
+  .otpInput {
+    width: 25%; /* Aumenta ainda mais a largura dos campos de OTP */
+  }
+
+  .titleDetails {
+    font-size: var(--font-size-small); /* Reduz o tamanho da fonte ainda mais */
+  }
+
+  .registerLink {
+    font-size: var(
+      --font-size-xsmall
+    ); /* Reduz o tamanho da fonte ainda mais */
+  }
+}

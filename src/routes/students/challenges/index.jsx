@@ -8,7 +8,7 @@ import ChallengesSideBar from "./components/details";
 const challenges = [
   {
     name: "Equação de 2º grau com Python",
-    image: "src/assets/images/user-laborus.jpeg",
+    image: "/user-laborus.jpeg",
     institution: "Análise e Desenvolvimento de Sistemas",
     points: 20,
     difficulty: "easy",

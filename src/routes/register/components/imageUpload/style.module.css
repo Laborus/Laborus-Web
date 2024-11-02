@@ -1,0 +1,14 @@
+.imageUpload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.imageUpload img {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  background-color: var(--neutral-200);
+}

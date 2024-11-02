@@ -9,7 +9,7 @@ export default function ProfileInfo() {
         <div className={styles.profilePicContainer}>
           <img
             className={styles.profilePic}
-            src="src/assets/images/user-laborus.jpeg"
+            src="/user-laborus.jpeg"
             alt="Profile Picture"
           />
         </div>

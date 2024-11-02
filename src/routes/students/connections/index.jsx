@@ -24,7 +24,7 @@ import {
 const students = [
   {
     name: "Juliane Bonfim",
-    image: "src/assets/images/user-laborus.jpeg", //src/assets/images/user-laborus.jpeg
+    image: "/user-laborus.jpeg", ///user-laborus.jpeg
     details: [{ icon: <FaGraduationCap />, text: "Fatec Carapicuíba" }],
     buttonLabel: "Adicionar",
   },
@@ -33,7 +33,7 @@ const students = [
 const companies = [
   {
     name: "Santander",
-    image: "src/assets/images/fatec-image.png", //src/assets/images/fatec-image.png
+    image: "/fatec-image.png", ///fatec-image.png
     details: [
       { icon: <FaMapMarkerAlt />, text: "Osasco | São Paulo" },
       { icon: <FaUsers />, text: "3.321 Seguidores" },
@@ -45,7 +45,7 @@ const companies = [
 const institutions = [
   {
     name: "E.E. Dona Maria Alice",
-    image: "src/assets/images/fatec-image.png", 
+    image: "/fatec-image.png", 
     details: [
       { icon: <FaMapMarkerAlt />, text: "Carapicuíba | São Paulo" },
       { icon: <FaUsers />, text: "3.321 Seguidores" },
@@ -61,7 +61,7 @@ export default function Connections() {
     <div className="wrapper">
       <aside className="chat-sidebar">
         <header className="chat-sidebar-header">
-          <h1 className="chat-title">Desafios</h1>
+          <h1 className="chat-title">Conexões</h1>
           <SearchBar />
           <FilterButtons
             activeFilter={activeFilter}

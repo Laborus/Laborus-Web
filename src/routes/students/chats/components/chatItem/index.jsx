@@ -7,7 +7,7 @@ export default function ChatItem({ chat }) {
       className={`${styles.chatListItem} ${chat.active ? styles.active : ""}`}
     >
       <div className={styles.wrapperInfoImage}>
-        <img src="src/assets/images/user-laborus.jpeg" alt="Profile Image" className={styles.img}/>
+        <img src="/user-laborus.jpeg" alt="Profile Image" className={styles.img}/>
         <div className={`${styles.statusIndicator} ${chat.status}`}></div>
       </div>
       <div className={styles.chatInfo}>

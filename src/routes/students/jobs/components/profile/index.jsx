@@ -9,7 +9,7 @@ export default function ProfileInfo() {
         <div className={styles.profilePicContainer}>
           <img
             className={styles.profilePic}
-            src="src/assets/images/fatec-image.png"
+            src="/fatec-image.png"
             alt="Profile Picture"
           />
         </div>

@@ -22,13 +22,13 @@ export default function NavBar() {
         </div>
 
         <nav className={styles.navMenu}>
-          <NavLinkItem to="/" icon={<GoHome />} text="Página inicial" />
-          <NavLinkItem to="/connections" icon={<FaRegUser />} text="Conexões" />
-          <NavLinkItem to="/jobs" icon={<MdWorkOutline />} text="Vagas" />
-          <NavLinkItem to="/chats" icon={<HiOutlineChatAlt />} text="Conversas" />
-          <NavLinkItem to="/challenges" icon={<FaRegStar />} text="Desafios" />
+          <NavLinkItem to="/student" icon={<GoHome />} text="Página inicial" />
+          <NavLinkItem to="connections" icon={<FaRegUser />} text="Conexões" />
+          <NavLinkItem to="jobs" icon={<MdWorkOutline />} text="Vagas" />
+          <NavLinkItem to="chats" icon={<HiOutlineChatAlt />} text="Conversas" />
+          <NavLinkItem to="challenges" icon={<FaRegStar />} text="Desafios" />
           <NavLinkItem
-            to="/notifications"
+            to="notifications"
             icon={<IoMdNotificationsOutline />}
             text="Notificações"
             extraText={2}

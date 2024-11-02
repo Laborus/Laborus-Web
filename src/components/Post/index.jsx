@@ -24,7 +24,7 @@ export default function Post({ post }) {
       <PostActions post={post} onCommentClick={toggleCommentModal} />
       <div className={styles.postComment} id="openCommentModalBtn">
         <img
-          src="src/assets/images/user-laborus.jpeg"
+          src="/user-laborus.jpeg"
           alt="Profile Picture"
           className={styles.commentProfileImg}
         />

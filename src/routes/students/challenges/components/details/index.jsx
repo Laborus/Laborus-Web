@@ -9,7 +9,7 @@ import SubmissionsList from "../submissionsList";
 const challenges = [
   {
     name: "Equação de 2º grau com Python",
-    image: "src/assets/images/user-laborus.jpeg",
+    image: "/user-laborus.jpeg",
     institution: "Análise e Desenvolvimento de Sistemas",
     difficulty: "easy",
     buttonLabel: "+ Adicionar",
@@ -20,7 +20,7 @@ export default function ChallengesSideBar() {
   return (
     <aside className={styles.profileContent}>
       <div className={styles.coverPhoto}>
-        <img src="src/assets/images/post-example-2.jpeg" alt="Cover Photo" />
+        <img src="/post-example-2.jpeg" alt="Cover Photo" />
       </div>
       <ProfileInfo />
       <StudentsHighlight
@@ -28,17 +28,17 @@ export default function ChallengesSideBar() {
           icon={<MdOutlineSchool />}
           students={[
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },

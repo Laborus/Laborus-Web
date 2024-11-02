@@ -10,14 +10,14 @@ const notifications = [
     name: "Maria Clara Júnior",
     message: "enviou uma solicitação de conexão",
     time: "46 segundos atrás",
-    image: "src/assets/images/fatec-image.png",
+    image: "/fatec-image.png",
   },
   {
     type: "alert",
     name: "Fatec Carapicuíba",
     message: "acionou um alerta",
     time: "4 minutos atrás",
-    image: "src/assets/images/fatec-image.png",
+    image: "/fatec-image.png",
   },
 ];
 

@@ -1,0 +1,21 @@
+.title {
+  font-size: var(--font-size-xxxlarge);
+  font-weight: var(--font-weight-xbold);
+  color: var(--neutral-800);
+  margin-bottom: var(--margin-small);
+  text-align: center;
+}
+
+.titleDetails {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-700);
+  margin-bottom: var(--margin-large);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--font-size-large);
+  }
+}

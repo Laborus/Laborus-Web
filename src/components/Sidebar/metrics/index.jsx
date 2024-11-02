@@ -15,7 +15,7 @@ export default function StudentMetrics() {
           icon={<FaRegBuilding />}
           students={[
             {
-              image: "src/assets/images/fatec-image.png",
+              image: "/fatec-image.png",
               name: "Fatec Carapicuíba",
               info: "3.320 Alunos",
             },
@@ -27,17 +27,17 @@ export default function StudentMetrics() {
           icon={<MdOutlineSchool />}
           students={[
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },
             {
-              image: "src/assets/images/user-laborus.jpeg",
+              image: "/user-laborus.jpeg",
               name: "Rogério Azevedo",
               info: "125 pontos",
             },

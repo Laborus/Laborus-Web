@@ -1,0 +1,20 @@
+.backButton {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--margin-large);
+}
+
+.backButton div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--margin-xsmall);
+  background-color: var(--neutral-200);
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+}

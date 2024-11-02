@@ -1,0 +1,30 @@
+.option {
+  text-align: center;
+  padding: 8px;
+  border: 2px solid var(--neutral-200);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.option img {
+  width: 90px;
+}
+
+.option p {
+  margin-top: auto; /* empurra o texto para o fundo da div */
+}
+
+.option:hover {
+  border: 2px solid var(--primary-purple);
+}
+
+.option.selected {
+  border: 2px solid var(--primary-purple);
+  background-color: var(--neutral-200);
+}

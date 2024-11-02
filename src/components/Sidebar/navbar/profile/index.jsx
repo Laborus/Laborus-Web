@@ -42,7 +42,7 @@ export default function ProfileSection() {
   return (
     <div className={`${styles.profileSection} ${isDropdownVisible ? styles.profileSectionActive : ''}`} onClick={toggleDropdown}>
       <img
-        src="src/assets/images/user-laborus.jpeg"
+        src="/user-laborus.jpeg"
         alt="Profile Picture"
         className={styles.profileImg}
       />

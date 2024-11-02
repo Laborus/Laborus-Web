@@ -6,7 +6,7 @@ export default function JobItem({ job, type }) {
   return (
     <li className={styles.connectionListItem}>
       <div className={styles.wrapJobContent}>
-        <img src="src/assets/images/fatec-image.png" alt="Job Profile" />
+        <img src="/fatec-image.png" alt="Job Profile" />
         <div className={styles.connectionInfo}>
           <h2 className={styles.nameConnection}>{job.title}</h2>
           <div className={styles.schoolInfo}>
