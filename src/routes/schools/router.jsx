@@ -4,7 +4,7 @@ import './style.css';
 export default function App() {
   return (
     <main className="container">
-        <NavBar role={'school'}></NavBar>
+        <NavBar></NavBar>
         <Outlet/>
     </main>
   );

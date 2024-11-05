@@ -1,0 +1,74 @@
+.notificationCard {
+  width: 100%;
+  padding: 22px;
+  background-color: var(--neutral-0);
+}
+.contentCard {
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.notificationCardConnection:hover,
+.notificationCardAlert:hover {
+  background-color: var(--neutral-100);
+}
+
+.profilePicContainer {
+  margin-right: 12px;
+  position: relative;
+}
+
+.profilePic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.notificationContent {
+  flex: 1;
+}
+
+.notificationText {
+  font-size: 14px;
+  color: var(--neutral-800);
+}
+
+.notificationTime {
+  font-size: 12px;
+  color: var(--primary-purple);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acceptIcon,
+.rejectIcon,
+.dismissIcon {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  display: flex;
+  place-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.acceptIcon {
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.rejectIcon {
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.dismissIcon {
+  background-color: var(--neutral-100);
+  color: var(--neutral-800);
+}

@@ -1,10 +1,10 @@
 import { Outlet, Route, Router } from "react-router-dom";
-import NavBar from "../components/Sidebar/navbar";
+import NavBar from "../../components/Sidebar/navbar";
 import './style.css';
-export default function App() {
+export default function AppSchool() {
   return (
     <main className="container">
-        <NavBar role={'student'}></NavBar>
+        <NavBar></NavBar>
         <Outlet/>
     </main>
   );
