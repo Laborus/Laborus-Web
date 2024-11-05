@@ -9,6 +9,8 @@ import NotificationsPage from "./routes/students/notifications";
 import HomePageSchool from "./routes/schools/home";
 import AppSchool from "./routes/students/router";
 import StudentsPageSchool from "./routes/schools/students";
+import ChallengesPageSchool from "./routes/schools/challenges";
+import NotificationsPageSchool from "./routes/schools/notifications";
 
 export const createRoutesByRole = (role) => {
   switch (role) {
@@ -34,6 +36,8 @@ export const createRoutesByRole = (role) => {
         children: [
           { path: `/${role}`, element: <HomePageSchool /> },
           { path: `/${role}/students`, element: <StudentsPageSchool /> },
+          { path: `/${role}/challenges`, element: <ChallengesPageSchool /> },
+          { path: `/${role}/notifications`, element: <NotificationsPageSchool /> },
         ],
       };
     default:
