@@ -2,7 +2,6 @@
   font-size: 24px;
   font-weight: bold;
   color: var(--neutral-800);
-  margin-bottom: 16px;
 }
 .section{
     padding: 20px;
@@ -97,4 +96,27 @@
 .difficulty span{
   font-size: 14px;
   color: var(--neutral-600);
+}
+
+.inline{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.addChallenges{
+  background-color: var(--primary-purple);
+  font-size: var(--font-size-large-medium);
+  color: var(--neutral-0);
+  display: flex;
+  place-items: center;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.addChallenges{
+  font-size: 24px;
 }

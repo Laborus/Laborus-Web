@@ -1,10 +1,16 @@
 import { MdOutlineSchool } from "react-icons/md";
 import styles from "./style.module.css";
+import { IoIosAdd } from "react-icons/io";
 
 export default function ChallengesListSchool({ items }) {
   return (
     <section className={styles.section}>
-      <h1 className={styles.listTitle}>Seus Desafios</h1>
+      <div className={styles.inline}>
+        <h1 className={styles.listTitle}>Seus Desafios</h1>
+        <button className={styles.addChallenges}>
+          <IoIosAdd />
+        </button>
+      </div>
       <ul className={styles.submissionsList}>
         {items.map((item) => (
           <li key={item.name} className={styles.submissionItem}>
@@ -27,7 +33,9 @@ export default function ChallengesListSchool({ items }) {
                 )}
                 <div className={styles.difficulty}>
                   <span>Dificuldade: </span>
-                  <span><strong>{item.difficulty}</strong></span>
+                  <span>
+                    <strong>{item.difficulty}</strong>
+                  </span>
                 </div>
               </div>
             </div>
