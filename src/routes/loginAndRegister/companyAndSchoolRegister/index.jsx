@@ -7,9 +7,9 @@ import Title from "../components/title";
 import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
-import BackButton from "../components/backButton"; // Importando o BackButton
-import InputField from "../components/inputField"; // Importando InputField
-import styles from "../studentRegister/style.module.css";
+import BackButton from "../components/backButton";
+import InputField from "../components/inputField";
+import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
 
 export default function CompanyAndSchoolRegister() {
   const [isLoading, setIsLoading] = useState(false);
@@ -55,14 +55,8 @@ export default function CompanyAndSchoolRegister() {
 
           <SubmitButton type="submit" />
         </form>
-        <p className={`${styles.registerLink} ${styles.termsPrivacy}`}>
-          Clicando em Criar conta, você concorda com os{" "}
-          <a href="../login/login.html">Termos de Uso</a> e confirma que você
-          leu a nossa <a href="../login/login.html">Política de Privacidade</a>.
-        </p>
-        <p className={styles.registerLink}>
-          Já possui uma conta? <a href="../login/login.html">Faça Login</a>.
-        </p>
+
+        <TermsAndPrivacy />
       </GroupBox>
       <SideBanner />
       {isLoading && <LoadingOverlay />}

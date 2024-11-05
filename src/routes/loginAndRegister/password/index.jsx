@@ -9,7 +9,7 @@ import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton"; // Importando o BackButton
 import PasswordField from "../components/passwordField";
-import styles from "../studentRegister/style.module.css";
+import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
 
 export default function Password() {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,14 +36,7 @@ export default function Password() {
 
           <SubmitButton type="submit" />
         </form>
-        <p className={`${styles.registerLink} ${styles.termsPrivacy}`}>
-          Clicando em Criar conta, você concorda com os{" "}
-          <a href="../login/">Termos de Uso</a> e confirma que você leu a nossa{" "}
-          <a href="../login/">Política de Privacidade</a>.
-        </p>
-        <p className={styles.registerLink}>
-          Já possui uma conta? <a href="../login/">Faça Login</a>.
-        </p>
+        <TermsAndPrivacy />
       </GroupBox>
       <SideBanner />
       {isLoading && <LoadingOverlay />}
