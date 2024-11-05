@@ -10,23 +10,41 @@ import { PostModal } from "../../Post/createPost";
 import ProfileSection from "./profile";
 import { LogoutModal } from "./logout";
 
-export default function NavBar({ role }) {
+const getNavItemsForRole = (role) => {
+  switch (role) {
+    case "student":
+      return [
+        { path: `/${role}`, icon: <GoHome />, text: "Página inicial" },
+        { path: `/${role}/connections`, icon: <FaRegUser />, text: "Conexões" },
+        { path: `/${role}/jobs`, icon: <MdWorkOutline />, text: "Vagas" },
+        { path: `/${role}/chats`, icon: <HiOutlineChatAlt />, text: "Conversas" },
+        { path: `/${role}/challenges`, icon: <FaRegStar />, text: "Desafios" },
+        { path: `/${role}/notifications`, icon: <IoMdNotificationsOutline />, text: "Notificações", extraText: 2 },
+      ];
+    case "school":
+      return [
+        { path: `/${role}`, icon: <GoHome />, text: "Página inicial" },
+        { path: `/${role}/students`, icon: <FaRegUser />, text: "Gerenciar alunos" },
+        { path: `/${role}/challenges`, icon: <FaRegStar />, text: "Gerenciar Desafios" },
+        { path: `/${role}/notifications`, icon: <IoMdNotificationsOutline />, text: "Notificações", extraText: 2 },
+      ];
+    case "company":
+      return [
+        { path: `/${role}`, icon: <GoHome />, text: "Página inicial" },
+        { path: `/${role}/jobs`, icon: <MdWorkOutline />, text: "Vagas" },
+        { path: `/${role}/chats`, icon: <HiOutlineChatAlt />, text: "Conversas" },
+      ];
+    default:
+      return [{ path: `/error`, icon: <GoHome />, text: "Página inicial" }];
+  }
+};
+
+export default function NavBar() {
   const [postModal, setPostModal] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
-  const location = useLocation();
+  const location = useLocation().pathname.split("/")[1];
 
-  // Caminho base construído a partir da role passada por props.
-  const basePath = `/${role}`;
-
-  // Menu de navegação baseado na role
-  const navItems = [
-    { path: `${basePath}`, icon: <GoHome />, text: "Página inicial" },
-    { path: `${basePath}/connections`, icon: <FaRegUser />, text: "Conexões" },
-    { path: `${basePath}/jobs`, icon: <MdWorkOutline />, text: "Vagas" },
-    { path: `${basePath}/chats`, icon: <HiOutlineChatAlt />, text: "Conversas" },
-    { path: `${basePath}/challenges`, icon: <FaRegStar />, text: "Desafios" },
-    { path: `${basePath}/notifications`, icon: <IoMdNotificationsOutline />, text: "Notificações", extraText: 2 }
-  ];
+  const navItems = getNavItemsForRole(location);
 
   return (
     <>
@@ -43,12 +61,14 @@ export default function NavBar({ role }) {
               icon={item.icon}
               text={item.text}
               extraText={item.extraText}
-              isActive={location.pathname === item.path}
             />
           ))}
         </nav>
 
-        <button className={styles.btnCreatePost} onClick={() => setPostModal(true)}>
+        <button
+          className={styles.btnCreatePost}
+          onClick={() => setPostModal(true)}
+        >
           Criar publicação
         </button>
 
@@ -60,13 +80,18 @@ export default function NavBar({ role }) {
   );
 }
 
-const NavLinkItem = ({ to, icon, text, extraText, isActive }) => (
-  <NavLink
-    to={to}
-    className={isActive ? `${styles.navItem} ${styles.navItemActive}` : styles.navItem}
-  >
-    {icon}
-    {text}
-    {extraText && <span className={styles.extraText}>{extraText}</span>}
-  </NavLink>
-);
+const NavLinkItem = ({ to, icon, text, extraText }) => {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        isActive ? `${styles.navItem} ${styles.navItemActive}` : styles.navItem
+      }
+      end 
+    >
+      {icon}
+      <span>{text}</span>
+      {extraText && <span className={styles.extraText}>{extraText}</span>}
+    </NavLink>
+  );
+};
