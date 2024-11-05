@@ -33,7 +33,6 @@ const getNavItemsForRole = (role) => {
         { path: `/${role}`, icon: <GoHome />, text: "Página inicial" },
         { path: `/${role}/jobs`, icon: <MdWorkOutline />, text: "Vagas" },
         { path: `/${role}/notifications`, icon: <IoMdNotificationsOutline />, text: "Notificações", extraText: 2 },
-
       ];
     default:
       return [{ path: `/error`, icon: <GoHome />, text: "Página inicial" }];
