@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./InputField.module.css";
+import styles from "./style.module.css";
 
 export default function InputField({ type, name, placeholder, errorMessage }) {
   return (

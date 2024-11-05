@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./LoginForm.module.css";
+import styles from "./style.module.css";
 import InputField from "../inputField";
 import PasswordField from "../passwordField";
 

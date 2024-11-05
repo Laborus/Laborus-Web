@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Login.module.css";
-import LoginForm from "./components/loginForm";
-import LoadingOverlay from "./components/loadingOverlay";
+import styles from "./style.module.css";
+import LoginForm from "../components/loginForm";
+import LoadingOverlay from "../components/loadingOverlay";
 
 export default function Login() {
   const [loading, setLoading] = React.useState(false); // Estado de carregamento

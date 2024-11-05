@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import styles from "../inputField/InputField.module.css";
+import styles from "../inputField/style.module.css";
 
 export default function PasswordField() {
   const [showPassword, setShowPassword] = useState(false);

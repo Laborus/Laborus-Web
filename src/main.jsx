@@ -10,15 +10,15 @@ import HomePage from "./routes/students/home";
 import ChatPages from "./routes/students/chats";
 import ChallengesPage from "./routes/students/challenges";
 import NotificationsPage from "./routes/students/notifications";
-import Login from "./routes/login";
-import AccountChoice from "./routes/register/accountChoice";
-import StudentRegister from "./routes/register/studentRegister";
-import SelectTags from "./routes/register/selectTags";
-import ProfileDetailsCompanyAndSchool from "./routes/register/profileDetailsCompanyAndSchool";
-import ProfileDetailsStudent from "./routes/register/profileDetailsStudent";
-import CompanyAndSchoolRegister from "./routes/register/companyAndSchoolRegister";
-import Password from "./routes/register/password";
-import Contact from "./routes/register/contact";
+import Login from "./routes/loginAndRegister/login";
+import AccountChoice from "./routes/loginAndRegister/accountChoice";
+import StudentRegister from "./routes/loginAndRegister/studentRegister";
+import SelectTags from "./routes/loginAndRegister/selectTags";
+import ProfileDetailsCompanyAndSchool from "./routes/loginAndRegister/profileDetailsCompanyAndSchool";
+import ProfileDetailsStudent from "./routes/loginAndRegister/profileDetailsStudent";
+import CompanyAndSchoolRegister from "./routes/loginAndRegister/companyAndSchoolRegister";
+import Password from "./routes/loginAndRegister/password";
+import Contact from "./routes/loginAndRegister/contact";
 
 const router = createBrowserRouter([
   {
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       { path: "/student/jobs", element: <JobsPage /> },
       { path: "/student/chats", element: <ChatPages /> },
       { path: "/student/challenges", element: <ChallengesPage /> },
-      { path: "/student/notifications", element: <NotificationsPage/> },
+      { path: "/student/notifications", element: <NotificationsPage /> },
     ],
   },
 ]);

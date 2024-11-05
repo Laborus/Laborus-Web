@@ -8,7 +8,7 @@ import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton"; // Importando o BackButton
-import PasswordField from "../../login/components/passwordField";
+import PasswordField from "../components/passwordField";
 import styles from "../studentRegister/style.module.css";
 
 export default function Password() {
