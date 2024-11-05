@@ -8,6 +8,7 @@ import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton"; // Importando o BackButton
+import InputField from "../components/inputField"; // Importando InputField
 import styles from "./style.module.css";
 
 export default function Register() {
@@ -31,47 +32,26 @@ export default function Register() {
           details="Cadastre-se na plataforma... É de graça."
         />
         <form id="register-form" onSubmit={handleSubmit}>
-          <div className={styles.inputBox}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nome completo"
-              maxLength="50"
-              required
-            />
-            <span
-              className={`${styles.error} ${styles.nameError}`}
-              style={{ display: "none" }}
-            >
-              O nome deve ter no máximo 50 caracteres.
-            </span>
-          </div>
+          <InputField
+            type="text"
+            name="name"
+            placeholder="Nome completo"
+            errorMessage="O nome deve ter no máximo 50 caracteres."
+          />
 
-          <div className={styles.inputBox}>
-            <input
-              type="text"
-              name="cpf"
-              placeholder="CPF"
-              maxLength="14"
-              required
-            />
-            <span
-              className={`${styles.error} ${styles.cpfError}`}
-              style={{ display: "none" }}
-            >
-              CPF inválido.
-            </span>
-          </div>
+          <InputField
+            type="text"
+            name="cpf"
+            placeholder="CPF"
+            errorMessage="CPF inválido."
+          />
 
-          <div className={styles.inputBox}>
-            <input type="email" name="email" placeholder="E-mail" required />
-            <span
-              className={`${styles.error} ${styles.emailError}`}
-              style={{ display: "none" }}
-            >
-              Por favor, insira um e-mail válido.
-            </span>
-          </div>
+          <InputField
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            errorMessage="Por favor, insira um e-mail válido."
+          />
 
           <SubmitButton type="submit" />
         </form>

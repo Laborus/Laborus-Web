@@ -1,3 +1,4 @@
+// CompanyAndSchoolRegister.jsx
 import React, { useState } from "react";
 import Container from "../components/container";
 import GroupBox from "../components/groupBox";
@@ -7,7 +8,7 @@ import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton"; // Importando o BackButton
-
+import InputField from "../components/inputField"; // Importando InputField
 import styles from "../studentRegister/style.module.css";
 
 export default function CompanyAndSchoolRegister() {
@@ -31,47 +32,26 @@ export default function CompanyAndSchoolRegister() {
           details="Cadastre-se na plataforma... É de graça."
         />
         <form id="register-form" onSubmit={handleSubmit}>
-          <div className={styles.inputBox}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nome da organização"
-              maxLength="50"
-              required
-            />
-            <span
-              className={`${styles.error} ${styles.nameError}`}
-              style={{ display: "none" }}
-            >
-              O nome deve ter no máximo 50 caracteres.
-            </span>
-          </div>
+          <InputField
+            type="text"
+            name="name"
+            placeholder="Nome da organização"
+            errorMessage="O nome deve ter no máximo 50 caracteres."
+          />
 
-          <div className={styles.inputBox}>
-            <input
-              type="text"
-              name="cnpj"
-              placeholder="CNPJ"
-              maxLength="14"
-              required
-            />
-            <span
-              className={`${styles.error} ${styles.cpfError}`}
-              style={{ display: "none" }}
-            >
-              CPF inválido.
-            </span>
-          </div>
+          <InputField
+            type="text"
+            name="cnpj"
+            placeholder="CNPJ"
+            errorMessage="CNPJ inválido."
+          />
 
-          <div className={styles.inputBox}>
-            <input type="email" name="email" placeholder="E-mail" required />
-            <span
-              className={`${styles.error} ${styles.emailError}`}
-              style={{ display: "none" }}
-            >
-              Por favor, insira um e-mail válido.
-            </span>
-          </div>
+          <InputField
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            errorMessage="Por favor, insira um e-mail válido."
+          />
 
           <SubmitButton type="submit" />
         </form>
