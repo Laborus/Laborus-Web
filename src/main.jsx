@@ -1,7 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/index.css";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Router,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
 import App from "./routes/router";
 import Error404 from "./routes/404";
 import Connections from "./routes/students/connections";
@@ -26,36 +31,32 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/register/accountChoice",
-    element: <AccountChoice />,
-  },
-  {
-    path: "/register/student",
-    element: <StudentRegister />,
-  },
-  {
-    path: "/register/SelectTags",
-    element: <SelectTags />,
-  },
-  {
-    path: "/register/companyAndSchool/profileDetails",
-    element: <ProfileDetailsCompanyAndSchool />,
-  },
-  {
-    path: "/register/student/profileDetails",
-    element: <ProfileDetailsStudent />,
-  },
-  {
-    path: "/register/companyAndSchool",
-    element: <CompanyAndSchoolRegister />,
-  },
-  {
-    path: "/register/password",
-    element: <Password />,
-  },
-  {
-    path: "/register/contact",
-    element: <Contact />,
+    path: "/register",
+    element: (
+      <div>
+        <Outlet />
+      </div>
+    ),
+    errorElement: <Error404 />,
+    children: [
+      { path: "/register/accountChoice", element: <AccountChoice /> },
+      { path: "/register/student", element: <StudentRegister /> },
+      { path: "/register/SelectTags", element: <SelectTags /> },
+      {
+        path: "/register/companyAndSchool/profileDetails",
+        element: <ProfileDetailsCompanyAndSchool />,
+      },
+      {
+        path: "/register/student/profileDetails",
+        element: <ProfileDetailsStudent />,
+      },
+      {
+        path: "/register/companyAndSchool",
+        element: <CompanyAndSchoolRegister />,
+      },
+      { path: "/register/password", element: <Password /> },
+      { path: "/register/contact", element: <Contact /> },
+    ],
   },
   {
     path: "/student",
