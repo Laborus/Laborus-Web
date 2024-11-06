@@ -25,6 +25,7 @@ const router = createBrowserRouter([
   { path: "/register/contact", element: <Contact /> },
   createRoutesByRole("student"),
   createRoutesByRole("school"),
+  createRoutesByRole("company"),
 ]);
 
 createRoot(document.getElementById("root")).render(

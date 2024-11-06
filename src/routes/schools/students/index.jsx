@@ -1,4 +1,3 @@
-import StudentMetrics from "../../../components/Sidebar/metrics";
 import StudentList from "./list";
 import styles from "./style.module.css";
 
