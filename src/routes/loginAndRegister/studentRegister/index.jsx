@@ -17,7 +17,6 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-
     // Simulando uma requisição com timeout
     setTimeout(() => setIsLoading(false), 2000);
   };
@@ -53,7 +52,7 @@ export default function Register() {
             errorMessage="Por favor, insira um e-mail válido."
           />
 
-          <SubmitButton type="submit" />
+          <SubmitButton disabled={isLoading} />
         </form>
 
         <TermsAndPrivacy />
