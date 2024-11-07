@@ -43,6 +43,52 @@ const validateCpf = (value) => {
   return "";
 };
 
+// Função para aplicar a máscara de CNPJ
+const applyCnpjMask = (value) => {
+  value = value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  if (value.length <= 2) return value;
+  if (value.length <= 5) return value.replace(/(\d{2})(\d{1,})/, "$1.$2");
+  if (value.length <= 8)
+    return value.replace(/(\d{2})(\d{3})(\d{1,})/, "$1.$2.$3");
+  if (value.length <= 12)
+    return value.replace(/(\d{2})(\d{3})(\d{3})(\d{1,})/, "$1.$2.$3/$4");
+  return value.replace(
+    /(\d{2})(\d{3})(\d{3})(\d{4})(\d{1,})/,
+    "$1.$2.$3/$4-$5"
+  );
+};
+
+// Função para validar CNPJ
+const validateCnpj = (value) => {
+  const cnpj = value.replace(/\D/g, ""); // Remove tudo que não for número
+  if (cnpj.length !== 14) return "CNPJ inválido.";
+
+  // Lógica de validação do CNPJ
+  let sum = 0;
+  let remainder;
+
+  // Validação dos primeiros 12 dígitos
+  for (let i = 0; i < 12; i++) {
+    sum += parseInt(cnpj.charAt(i)) * (5 - (i % 8));
+  }
+  remainder = sum % 11;
+  if (remainder < 2) remainder = 0;
+  else remainder = 11 - remainder;
+  if (remainder !== parseInt(cnpj.charAt(12))) return "CNPJ inválido.";
+
+  // Validação dos últimos 2 dígitos
+  sum = 0;
+  for (let i = 0; i < 13; i++) {
+    sum += parseInt(cnpj.charAt(i)) * (6 - (i % 8));
+  }
+  remainder = sum % 11;
+  if (remainder < 2) remainder = 0;
+  else remainder = 11 - remainder;
+  if (remainder !== parseInt(cnpj.charAt(13))) return "CNPJ inválido.";
+
+  return "";
+};
+
 export default function InputField({
   type,
   name,
@@ -66,6 +112,12 @@ export default function InputField({
       if (cpfError) return cpfError;
     }
 
+    if (type === "text" && name === "cnpj") {
+      if (!value) return "O campo de CNPJ não pode estar vazio.";
+      const cnpjError = validateCnpj(value); // Verifica se o CNPJ é válido
+      if (cnpjError) return cnpjError;
+    }
+
     if (type === "text" && name === "name") {
       if (!value) return "O nome não pode estar vazio.";
       if (value.length > 50) return "O nome deve ter no máximo 50 caracteres.";
@@ -84,6 +136,10 @@ export default function InputField({
 
     if (name === "cpf") {
       inputValue = applyCpfMask(inputValue); // Aplica a máscara no CPF
+    }
+
+    if (name === "cnpj") {
+      inputValue = applyCnpjMask(inputValue); // Aplica a máscara no CNPJ
     }
 
     setValue(inputValue);
