@@ -20,12 +20,6 @@ export default function Login() {
     return "";
   };
 
-  const validatePassword = (value) => {
-    if (!value) return "O campo de senha não pode estar vazio.";
-    if (value.length < 6) return "A senha deve ter pelo menos 6 caracteres.";
-    return "";
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
@@ -50,7 +44,7 @@ export default function Login() {
             validate={validateEmail}
           />
 
-          <PasswordField validate={validatePassword} />
+          <PasswordField />
 
           <a href="#" className={styles.forgotPassword}>
             Esqueceu a senha?
