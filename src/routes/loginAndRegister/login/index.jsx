@@ -13,6 +13,19 @@ import styles from "./style.module.css";
 export default function Login() {
   const [isLoading, setLoading] = React.useState(false); // Estado de carregamento
 
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!value) return "O campo de e-mail não pode estar vazio.";
+    if (!emailRegex.test(value)) return "Por favor, insira um e-mail válido.";
+    return "";
+  };
+
+  const validatePassword = (value) => {
+    if (!value) return "O campo de senha não pode estar vazio.";
+    if (value.length < 6) return "A senha deve ter pelo menos 6 caracteres.";
+    return "";
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
@@ -34,16 +47,16 @@ export default function Login() {
             type="email"
             name="email"
             placeholder="E-mail"
-            errorMessage="Os campos não podem estar vazios."
+            validate={validateEmail}
           />
 
-          <PasswordField />
+          <PasswordField validate={validatePassword} />
 
           <a href="#" className={styles.forgotPassword}>
             Esqueceu a senha?
           </a>
 
-          <SubmitButton type="submit" />
+          <SubmitButton disabled={isLoading} />
 
           <p className={styles.registerLink}>
             Não possui conta ainda? <a href="#">Cadastre-se.</a>

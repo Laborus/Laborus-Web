@@ -45,6 +45,10 @@
   z-index: 1;
 }
 
+.inputBox.errorActive i {
+  top: 35%;
+}
+
 @media (max-width: 480px) {
   .inputBox input {
     padding: 12px 16px;
