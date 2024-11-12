@@ -61,32 +61,40 @@ const applyCnpjMask = (value) => {
 // Função para validar CNPJ
 const validateCnpj = (value) => {
   const cnpj = value.replace(/\D/g, ""); // Remove tudo que não for número
+
+  // Verificação do comprimento do CNPJ
   if (cnpj.length !== 14) return "CNPJ inválido.";
 
-  // Lógica de validação do CNPJ
+  // Verificação para CNPJs com todos os dígitos iguais (não permitidos)
+  if (/^(\d)\1+$/.test(cnpj)) return "CNPJ inválido.";
+
+  // Validação do primeiro dígito verificador
   let sum = 0;
-  let remainder;
-
-  // Validação dos primeiros 12 dígitos
+  const firstWeight = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
   for (let i = 0; i < 12; i++) {
-    sum += parseInt(cnpj.charAt(i)) * (5 - (i % 8));
+    sum += parseInt(cnpj.charAt(i)) * firstWeight[i];
   }
-  remainder = sum % 11;
-  if (remainder < 2) remainder = 0;
-  else remainder = 11 - remainder;
-  if (remainder !== parseInt(cnpj.charAt(12))) return "CNPJ inválido.";
+  let remainder = sum % 11;
+  const firstVerifier = remainder < 2 ? 0 : 11 - remainder;
+  if (firstVerifier !== parseInt(cnpj.charAt(12))) {
+    console.log("Primeiro dígito verificador incorreto.");
+    return "CNPJ inválido.";
+  }
 
-  // Validação dos últimos 2 dígitos
+  // Validação do segundo dígito verificador
   sum = 0;
+  const secondWeight = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
   for (let i = 0; i < 13; i++) {
-    sum += parseInt(cnpj.charAt(i)) * (6 - (i % 8));
+    sum += parseInt(cnpj.charAt(i)) * secondWeight[i];
   }
   remainder = sum % 11;
-  if (remainder < 2) remainder = 0;
-  else remainder = 11 - remainder;
-  if (remainder !== parseInt(cnpj.charAt(13))) return "CNPJ inválido.";
+  const secondVerifier = remainder < 2 ? 0 : 11 - remainder;
+  if (secondVerifier !== parseInt(cnpj.charAt(13))) {
+    console.log("Segundo dígito verificador incorreto.");
+    return "CNPJ inválido.";
+  }
 
-  return "";
+  return ""; // CNPJ válido
 };
 
 export default function InputField({
