@@ -9,18 +9,30 @@ import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton";
 import InputField from "../components/inputField";
-import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
+import TermsAndPrivacy from "../components/termsAndPrivacy";
 
 export default function CompanyAndSchoolRegister() {
   const [isLoading, setIsLoading] = useState(false);
+  const [formValidity, setFormValidity] = useState({
+    name: false,
+    cnpj: false,
+    email: false,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-
-    // Simulando uma requisição com timeout
     setTimeout(() => setIsLoading(false), 2000);
   };
+
+  const handleInputChange = (name, isValid) => {
+    setFormValidity((prevValidity) => ({
+      ...prevValidity,
+      [name]: isValid,
+    }));
+  };
+
+  const isFormValid = Object.values(formValidity).every(Boolean);
 
   return (
     <Container>
@@ -37,6 +49,7 @@ export default function CompanyAndSchoolRegister() {
             name="name"
             placeholder="Nome da organização"
             errorMessage="O nome deve ter no máximo 50 caracteres."
+            onValidityChange={handleInputChange}
           />
 
           <InputField
@@ -44,6 +57,7 @@ export default function CompanyAndSchoolRegister() {
             name="cnpj"
             placeholder="CNPJ"
             errorMessage="CNPJ inválido."
+            onValidityChange={handleInputChange}
           />
 
           <InputField
@@ -51,9 +65,10 @@ export default function CompanyAndSchoolRegister() {
             name="email"
             placeholder="E-mail"
             errorMessage="Por favor, insira um e-mail válido."
+            onValidityChange={handleInputChange}
           />
 
-          <SubmitButton type="submit" />
+          <SubmitButton disabled={isLoading || !isFormValid} />
         </form>
 
         <TermsAndPrivacy />

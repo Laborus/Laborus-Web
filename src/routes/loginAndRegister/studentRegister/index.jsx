@@ -1,4 +1,3 @@
-// Register.jsx
 import React, { useState } from "react";
 import Container from "../components/container";
 import GroupBox from "../components/groupBox";
@@ -7,19 +6,32 @@ import Title from "../components/title";
 import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
-import BackButton from "../components/backButton"; // Importando o BackButton
-import InputField from "../components/inputField"; // Importando InputField
-import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
+import BackButton from "../components/backButton";
+import InputField from "../components/inputField";
+import TermsAndPrivacy from "../components/termsAndPrivacy";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState(false);
+  const [formValidity, setFormValidity] = useState({
+    name: false,
+    cpf: false,
+    email: false,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulando uma requisição com timeout
     setTimeout(() => setIsLoading(false), 2000);
   };
+
+  const handleInputChange = (name, isValid) => {
+    setFormValidity((prevValidity) => ({
+      ...prevValidity,
+      [name]: isValid,
+    }));
+  };
+
+  const isFormValid = Object.values(formValidity).every(Boolean);
 
   return (
     <Container>
@@ -36,6 +48,7 @@ export default function Register() {
             name="name"
             placeholder="Nome completo"
             errorMessage="O nome deve ter no máximo 50 caracteres."
+            onValidityChange={handleInputChange}
           />
 
           <InputField
@@ -43,6 +56,7 @@ export default function Register() {
             name="cpf"
             placeholder="CPF"
             errorMessage="CPF inválido."
+            onValidityChange={handleInputChange}
           />
 
           <InputField
@@ -50,9 +64,10 @@ export default function Register() {
             name="email"
             placeholder="E-mail"
             errorMessage="Por favor, insira um e-mail válido."
+            onValidityChange={handleInputChange}
           />
 
-          <SubmitButton disabled={isLoading} />
+          <SubmitButton disabled={isLoading || !isFormValid} />
         </form>
 
         <TermsAndPrivacy />

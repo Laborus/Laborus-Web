@@ -11,38 +11,6 @@ const applyCpfMask = (value) => {
   return value.replace(/(\d{3})(\d{3})(\d{3})(\d{1,})/, "$1.$2.$3-$4");
 };
 
-// Função para validar CPF
-const validateCpf = (value) => {
-  const cpf = value.replace(/\D/g, ""); // Remove tudo que não for número
-  if (cpf.length !== 11) return "CPF inválido.";
-
-  // Lógica de validação simples para CPF (não é 100% confiável, mas é suficiente para a maioria dos casos)
-  let sum = 0;
-  let remainder;
-
-  // Verifica se todos os números são iguais (como 111.111.111-11, 222.222.222-22, etc.)
-  if (/^(\d)\1{10}$/.test(cpf)) return "CPF inválido.";
-
-  // Validação do primeiro dígito verificador
-  for (let i = 0; i < 9; i++) {
-    sum += parseInt(cpf.charAt(i)) * (10 - i);
-  }
-  remainder = (sum * 10) % 11;
-  if (remainder === 10 || remainder === 11) remainder = 0;
-  if (remainder !== parseInt(cpf.charAt(9))) return "CPF inválido.";
-
-  // Validação do segundo dígito verificador
-  sum = 0;
-  for (let i = 0; i < 10; i++) {
-    sum += parseInt(cpf.charAt(i)) * (11 - i);
-  }
-  remainder = (sum * 10) % 11;
-  if (remainder === 10 || remainder === 11) remainder = 0;
-  if (remainder !== parseInt(cpf.charAt(10))) return "CPF inválido.";
-
-  return "";
-};
-
 // Função para aplicar a máscara de CNPJ
 const applyCnpjMask = (value) => {
   value = value.replace(/\D/g, ""); // Remove caracteres não numéricos
@@ -58,41 +26,49 @@ const applyCnpjMask = (value) => {
   );
 };
 
+// Função para validar CPF
+const validateCpf = (value) => {
+  const cpf = value.replace(/\D/g, ""); // Remove tudo que não for número
+  if (cpf.length !== 11) return "CPF inválido.";
+  if (/^(\d)\1{10}$/.test(cpf)) return "CPF inválido."; // Verifica se todos os números são iguais
+
+  let sum = 0;
+  let remainder;
+
+  for (let i = 0; i < 9; i++) sum += parseInt(cpf.charAt(i)) * (10 - i);
+  remainder = (sum * 10) % 11;
+  if (remainder === 10 || remainder === 11) remainder = 0;
+  if (remainder !== parseInt(cpf.charAt(9))) return "CPF inválido.";
+
+  sum = 0;
+  for (let i = 0; i < 10; i++) sum += parseInt(cpf.charAt(i)) * (11 - i);
+  remainder = (sum * 10) % 11;
+  if (remainder === 10 || remainder === 11) remainder = 0;
+  if (remainder !== parseInt(cpf.charAt(10))) return "CPF inválido.";
+
+  return "";
+};
+
 // Função para validar CNPJ
 const validateCnpj = (value) => {
   const cnpj = value.replace(/\D/g, ""); // Remove tudo que não for número
-
-  // Verificação do comprimento do CNPJ
   if (cnpj.length !== 14) return "CNPJ inválido.";
+  if (/^(\d)\1+$/.test(cnpj)) return "CNPJ inválido."; // Verifica se todos os números são iguais
 
-  // Verificação para CNPJs com todos os dígitos iguais (não permitidos)
-  if (/^(\d)\1+$/.test(cnpj)) return "CNPJ inválido.";
-
-  // Validação do primeiro dígito verificador
   let sum = 0;
   const firstWeight = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-  for (let i = 0; i < 12; i++) {
-    sum += parseInt(cnpj.charAt(i)) * firstWeight[i];
-  }
+  for (let i = 0; i < 12; i++) sum += parseInt(cnpj.charAt(i)) * firstWeight[i];
   let remainder = sum % 11;
   const firstVerifier = remainder < 2 ? 0 : 11 - remainder;
-  if (firstVerifier !== parseInt(cnpj.charAt(12))) {
-    console.log("Primeiro dígito verificador incorreto.");
-    return "CNPJ inválido.";
-  }
+  if (firstVerifier !== parseInt(cnpj.charAt(12))) return "CNPJ inválido.";
 
-  // Validação do segundo dígito verificador
   sum = 0;
   const secondWeight = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 13; i++)
     sum += parseInt(cnpj.charAt(i)) * secondWeight[i];
-  }
   remainder = sum % 11;
   const secondVerifier = remainder < 2 ? 0 : 11 - remainder;
-  if (secondVerifier !== parseInt(cnpj.charAt(13))) {
-    console.log("Segundo dígito verificador incorreto.");
-    return "CNPJ inválido.";
-  }
+  if (secondVerifier !== parseInt(cnpj.charAt(13))) return "CNPJ inválido.";
 
   return ""; // CNPJ válido
 };
@@ -101,41 +77,44 @@ export default function InputField({
   type,
   name,
   placeholder,
-  validate, // Função de validação personalizada
-  errorMessage, // Mensagem de erro personalizada
+  errorMessage,
+  onValidityChange, // Prop para comunicar validade
 }) {
   const [error, setError] = useState("");
   const [value, setValue] = useState("");
 
-  const defaultValidate = (value) => {
+  const validateField = (value) => {
+    let validationError = "";
+
     if (type === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!value) return "O campo de e-mail não pode estar vazio.";
-      if (!emailRegex.test(value)) return "Por favor, insira um e-mail válido.";
+      if (!value) validationError = "O campo de e-mail não pode estar vazio.";
+      else if (!emailRegex.test(value))
+        validationError = "Por favor, insira um e-mail válido.";
     }
 
     if (type === "text" && name === "cpf") {
-      if (!value) return "O campo de CPF não pode estar vazio.";
-      const cpfError = validateCpf(value); // Verifica se o CPF é válido
-      if (cpfError) return cpfError;
+      if (!value) validationError = "O campo de CPF não pode estar vazio.";
+      else validationError = validateCpf(value); // CPF validation
     }
 
     if (type === "text" && name === "cnpj") {
-      if (!value) return "O campo de CNPJ não pode estar vazio.";
-      const cnpjError = validateCnpj(value); // Verifica se o CNPJ é válido
-      if (cnpjError) return cnpjError;
+      if (!value) validationError = "O campo de CNPJ não pode estar vazio.";
+      else validationError = validateCnpj(value); // CNPJ validation
     }
 
     if (type === "text" && name === "name") {
-      if (!value) return "O nome não pode estar vazio.";
-      if (value.length > 50) return "O nome deve ter no máximo 50 caracteres.";
+      if (!value) validationError = "O nome não pode estar vazio.";
+      else if (value.length > 50)
+        validationError = "O nome deve ter no máximo 50 caracteres.";
     }
 
-    return "";
+    onValidityChange(name, !validationError); // Comunica a validade do campo
+    return validationError;
   };
 
   const handleBlur = () => {
-    const validationError = validate ? validate(value) : defaultValidate(value);
+    const validationError = validateField(value);
     setError(validationError);
   };
 
@@ -143,11 +122,11 @@ export default function InputField({
     let inputValue = e.target.value;
 
     if (name === "cpf") {
-      inputValue = applyCpfMask(inputValue); // Aplica a máscara no CPF
+      inputValue = applyCpfMask(inputValue); // Aplica a máscara de CPF
     }
 
     if (name === "cnpj") {
-      inputValue = applyCnpjMask(inputValue); // Aplica a máscara no CNPJ
+      inputValue = applyCnpjMask(inputValue); // Aplica a máscara de CNPJ
     }
 
     setValue(inputValue);
