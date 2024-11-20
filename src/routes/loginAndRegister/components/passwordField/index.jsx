@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "../inputField/style.module.css";
 
-export default function PasswordField() {
+export default function PasswordField({ onValidityChange }) {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,17 +27,21 @@ export default function PasswordField() {
     if (!/[!@#$%^&*]/.test(value)) {
       return "A senha deve conter pelo menos um caractere especial (!@#$%^&*).";
     }
-    return "";
+    return ""; // Senha válida
   };
 
   const handleBlur = () => {
     const validationError = validatePassword(password);
     setError(validationError);
+
+    // Notifica o componente pai sobre a validade da senha
+    onValidityChange("password", validationError === "");
   };
 
   const handleChange = (e) => {
     const { value } = e.target;
     setPassword(value);
+
     if (error) {
       // Limpa o erro enquanto o usuário digita, para feedback imediato
       setError("");

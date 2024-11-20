@@ -12,14 +12,24 @@ import PasswordField from "../components/passwordField";
 import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
 
 export default function Password() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false); // Estado de carregamento
+  const [formValidity, setFormValidity] = useState({
+    password: false,
+  }); // Estado de validade dos campos
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+  const handleInputChange = (name, isValid) => {
+    setFormValidity((prevValidity) => ({
+      ...prevValidity,
+      [name]: isValid,
+    }));
+  };
 
-    // Simulando uma requisição com timeout
-    setTimeout(() => setIsLoading(false), 2000);
+  const isFormValid = Object.values(formValidity).every(Boolean); // Verifica se todos os campos são válidos
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000); // Simula carregamento
   };
 
   return (
@@ -32,9 +42,9 @@ export default function Password() {
           details="Digite uma senha com no mínimo 8 caracteres."
         />
         <form id="register-form" onSubmit={handleSubmit}>
-          <PasswordField />
+          <PasswordField onValidityChange={handleInputChange} />
 
-          <SubmitButton type="submit" />
+          <SubmitButton disabled={!isFormValid || isLoading} />
         </form>
         <TermsAndPrivacy />
       </GroupBox>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/container";
 import GroupBox from "../components/groupBox";
 import Logo from "../components/logo";
@@ -11,14 +11,20 @@ import PasswordField from "../components/passwordField";
 import styles from "./style.module.css";
 
 export default function Login() {
-  const [isLoading, setLoading] = React.useState(false); // Estado de carregamento
+  const [isLoading, setLoading] = useState(false); // Estado de carregamento
+  const [formValidity, setFormValidity] = useState({
+    email: false,
+    password: false,
+  }); // Estado de validade dos campos
 
-  const validateEmail = (value) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!value) return "O campo de e-mail não pode estar vazio.";
-    if (!emailRegex.test(value)) return "Por favor, insira um e-mail válido.";
-    return "";
+  const handleInputChange = (name, isValid) => {
+    setFormValidity((prevValidity) => ({
+      ...prevValidity,
+      [name]: isValid,
+    }));
   };
+
+  const isFormValid = Object.values(formValidity).every(Boolean); // Verifica se todos os campos são válidos
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,16 +47,17 @@ export default function Login() {
             type="email"
             name="email"
             placeholder="E-mail"
-            validate={validateEmail}
+            errorMessage="Por favor, insira um e-mail válido."
+            onValidityChange={handleInputChange}
           />
 
-          <PasswordField />
+          <PasswordField onValidityChange={handleInputChange} />
 
           <a href="#" className={styles.forgotPassword}>
             Esqueceu a senha?
           </a>
 
-          <SubmitButton disabled={isLoading} />
+          <SubmitButton disabled={!isFormValid || isLoading} />
 
           <p className={styles.registerLink}>
             Não possui conta ainda? <a href="#">Cadastre-se.</a>
