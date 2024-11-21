@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './commentModal.module.css';
+import React from "react";
+import styles from "./commentModal.module.css";
 import { FaPaperPlane } from "react-icons/fa";
 
 export default function CommentModal({ onClose }) {
@@ -14,7 +14,9 @@ export default function CommentModal({ onClose }) {
             Comentários <span className={styles.commentCount}>3</span>
           </h3>
           <div className={styles.commentTabs}>
-            <button className={`${styles.commentFilter} ${styles.active}`}>Recentes</button>
+            <button className={`${styles.commentFilter} ${styles.active}`}>
+              Recentes
+            </button>
             <button className={styles.commentFilter}>Antigos</button>
             <button className={styles.commentFilter}>Mais curtidos</button>
           </div>
@@ -22,7 +24,7 @@ export default function CommentModal({ onClose }) {
         <div className={styles.commentsList}>
           <div className={styles.commentItem}>
             <img
-              src="src/assets/images/user-laborus.jpeg"
+              src="/user-laborus.jpeg"
               alt="User Profile"
               className={styles.commentProfileImg}
             />
@@ -36,7 +38,7 @@ export default function CommentModal({ onClose }) {
           </div>
           <div className={styles.commentInputSection}>
             <img
-              src="src/assets/images/user-laborus.jpeg"
+              src="/user-laborus.jpeg"
               alt="User Profile"
               className={styles.commentInputProfileImg}
             />
