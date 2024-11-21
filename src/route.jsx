@@ -14,6 +14,7 @@ import NotificationsPageSchool from "./routes/schools/notifications";
 import AppCompany from "./routes/company/router";
 import HomePageCompany from "./routes/company/home";
 import JobsPageCompany from "./routes/company/job";
+import ProfileCompany from "./routes/company/profile";
 
 export const createRoutesByRole = (role) => {
   switch (role) {
@@ -40,18 +41,25 @@ export const createRoutesByRole = (role) => {
           { path: `/${role}`, element: <HomePageSchool /> },
           { path: `/${role}/students`, element: <StudentsPageSchool /> },
           { path: `/${role}/challenges`, element: <ChallengesPageSchool /> },
-          { path: `/${role}/notifications`, element: <NotificationsPageSchool /> },
+          {
+            path: `/${role}/notifications`,
+            element: <NotificationsPageSchool />,
+          },
         ],
       };
-      case "company":
+    case "company":
       return {
         path: `/${role}`,
         element: <AppCompany />,
         errorElement: <Error404 />,
         children: [
-          { path: `/${role}`, element: <HomePageCompany/> },
+          { path: `/${role}`, element: <HomePageCompany /> },
           { path: `/${role}/jobs`, element: <JobsPageCompany /> },
-          { path: `/${role}/notifications`, element: <NotificationsPageSchool /> },
+          {
+            path: `/${role}/notifications`,
+            element: <NotificationsPageSchool />,
+          },
+          { path: `/${role}/profile`, element: <ProfileCompany /> },
         ],
       };
     default:
