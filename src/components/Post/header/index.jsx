@@ -16,7 +16,7 @@ export default function PostHeader({ post }) {
 
   const openDeleteModal = () => {
     setShowDeleteModal(true);
-    setShowOptionsMenu(false);
+    setShowOptionsMenu((prevState) => prevState);
   };
 
   const closeDeleteModal = () => {
