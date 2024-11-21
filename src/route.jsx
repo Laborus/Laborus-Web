@@ -15,6 +15,7 @@ import AppCompany from "./routes/company/router";
 import HomePageCompany from "./routes/company/home";
 import JobsPageCompany from "./routes/company/job";
 import ProfileCompany from "./routes/company/profile";
+import ProfileSchool from "./routes/schools/profile";
 
 export const createRoutesByRole = (role) => {
   switch (role) {
@@ -45,6 +46,7 @@ export const createRoutesByRole = (role) => {
             path: `/${role}/notifications`,
             element: <NotificationsPageSchool />,
           },
+          { path: `/${role}/profile`, element: <ProfileSchool /> },
         ],
       };
     case "company":
