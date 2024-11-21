@@ -18,7 +18,7 @@
   border-color: var(--primary-purple);
 }
 
-.inputBox.error-active input {
+.inputBox.errorActive input {
   border-color: var(--red);
 }
 
@@ -30,7 +30,7 @@
   display: none;
 }
 
-.inputBox.error-active .error {
+.inputBox.errorActive .error {
   display: block;
 }
 
@@ -45,32 +45,13 @@
   z-index: 1;
 }
 
-.registerLink.termsPrivacy {
-  font-size: var(--font-size-small);
-  color: var(--neutral-600);
-}
-
-.registerLink {
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-medium);
-  color: var(--neutral-700);
-  text-align: center;
-  margin-top: var(--margin-small);
-}
-
-.registerLink a {
-  color: var(--primary-purple);
-  text-decoration: underline;
+.inputBox.errorActive i {
+  top: 35%;
 }
 
 @media (max-width: 480px) {
   .inputBox input {
     padding: 12px 16px;
-    font-size: var(--font-size-medium);
-  }
-
-  .inputBox i {
     font-size: var(--font-size-medium);
   }
 }

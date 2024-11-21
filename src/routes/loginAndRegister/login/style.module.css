@@ -1,0 +1,24 @@
+.forgotPassword {
+  color: var(--primary-purple);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  display: block;
+  margin-bottom: var(--margin-small);
+  text-decoration: underline;
+}
+
+.registerLink {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-700);
+  text-align: center;
+  margin-top: var(--margin-large);
+}
+
+.registerLink a {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}

@@ -105,11 +105,7 @@ export default function ProfileDetails() {
 
           <SubmitButton
             disabled={
-              !selectedMunicipio ||
-              !selectedInstituicao ||
-              !selectedCurso ||
-              !about ||
-              loading
+              !selectedInstituicao || !selectedCurso || !about || loading
             }
             label={loading ? "Enviando..." : "Enviar"}
           />

@@ -1,5 +1,5 @@
 // Register.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaEnvelope, FaGlobe, FaPhone } from "react-icons/fa"; // Importando ícones
 import Container from "../components/container";
 import GroupBox from "../components/groupBox";
@@ -9,10 +9,42 @@ import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton";
+import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
 import styles from "./style.module.css";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    website: "",
+    phone: "",
+    email: "",
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    const { website, phone, email } = formData;
+    setIsFormValid(
+      website.trim() !== "" && phone.trim() !== "" && email.trim() !== ""
+    );
+  }, [formData]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: name === "phone" ? formatPhone(value) : value,
+    }));
+  };
+
+  const formatPhone = (phone) => {
+    // Aplica uma máscara ao telefone no formato (XX) XXXXX-XXXX
+    return phone
+      .replace(/\D/g, "")
+      .replace(/^(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{5})(\d)/, "$1-$2")
+      .replace(/(-\d{4})\d+?$/, "$1");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +72,8 @@ export default function Contact() {
               type="url"
               name="website"
               placeholder="URL do seu site"
+              value={formData.website}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -52,6 +86,8 @@ export default function Contact() {
               type="tel"
               name="phone"
               placeholder="Número de telefone"
+              value={formData.phone}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -60,25 +96,20 @@ export default function Contact() {
             <div className={styles.boxIcon}>
               <FaEnvelope className={styles.icon} />
             </div>
-            <input type="email" name="email" placeholder="E-mail" required />
-            <span
-              className={`${styles.error} ${styles.emailError}`}
-              style={{ display: "none" }}
-            >
-              Por favor, insira um e-mail válido.
-            </span>
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
           </div>
 
-          <SubmitButton type="submit" />
+          <SubmitButton type="submit" disabled={!isFormValid || isLoading} />
         </form>
-        <p className={`${styles.registerLink} ${styles.termsPrivacy}`}>
-          Clicando em Criar conta, você concorda com os{" "}
-          <a href="../login/login.html">Termos de Uso</a> e confirma que você
-          leu a nossa <a href="../login/login.html">Política de Privacidade</a>.
-        </p>
-        <p className={styles.registerLink}>
-          Já possui uma conta? <a href="../login/login.html">Faça Login</a>.
-        </p>
+
+        <TermsAndPrivacy />
       </GroupBox>
       <SideBanner />
       {isLoading && <LoadingOverlay />}

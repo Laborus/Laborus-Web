@@ -1,0 +1,18 @@
+.registerLink.termsPrivacy {
+  font-size: var(--font-size-small);
+  color: var(--neutral-600);
+}
+
+.registerLink {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--neutral-700);
+  text-align: center;
+  margin-top: var(--margin-small);
+}
+
+.registerLink a {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}

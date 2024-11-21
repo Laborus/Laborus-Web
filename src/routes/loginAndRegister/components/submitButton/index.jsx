@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 export default function SubmitButton({ onClick, disabled }) {
   return (
     <button
-      type="button"
+      type="submit"
       className={styles.submitButton}
       onClick={onClick}
       disabled={disabled}

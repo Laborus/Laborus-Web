@@ -8,18 +8,28 @@ import SubmitButton from "../components/submitButton";
 import LoadingOverlay from "../components/loadingOverlay";
 import SideBanner from "../components/sideBanner";
 import BackButton from "../components/backButton"; // Importando o BackButton
-import PasswordField from "../../login/components/passwordField";
-import styles from "../studentRegister/style.module.css";
+import PasswordField from "../components/passwordField";
+import TermsAndPrivacy from "../components/termsAndPrivacy"; // Importando o novo componente
 
 export default function Password() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false); // Estado de carregamento
+  const [formValidity, setFormValidity] = useState({
+    password: false,
+  }); // Estado de validade dos campos
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+  const handleInputChange = (name, isValid) => {
+    setFormValidity((prevValidity) => ({
+      ...prevValidity,
+      [name]: isValid,
+    }));
+  };
 
-    // Simulando uma requisição com timeout
-    setTimeout(() => setIsLoading(false), 2000);
+  const isFormValid = Object.values(formValidity).every(Boolean); // Verifica se todos os campos são válidos
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000); // Simula carregamento
   };
 
   return (
@@ -32,18 +42,11 @@ export default function Password() {
           details="Digite uma senha com no mínimo 8 caracteres."
         />
         <form id="register-form" onSubmit={handleSubmit}>
-          <PasswordField />
+          <PasswordField onValidityChange={handleInputChange} />
 
-          <SubmitButton type="submit" />
+          <SubmitButton disabled={!isFormValid || isLoading} />
         </form>
-        <p className={`${styles.registerLink} ${styles.termsPrivacy}`}>
-          Clicando em Criar conta, você concorda com os{" "}
-          <a href="../login/">Termos de Uso</a> e confirma que você leu a nossa{" "}
-          <a href="../login/">Política de Privacidade</a>.
-        </p>
-        <p className={styles.registerLink}>
-          Já possui uma conta? <a href="../login/">Faça Login</a>.
-        </p>
+        <TermsAndPrivacy />
       </GroupBox>
       <SideBanner />
       {isLoading && <LoadingOverlay />}
