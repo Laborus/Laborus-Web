@@ -24,9 +24,11 @@ export default function SubmissionSchool({ items }) {
                 </div>
               )}
               <div className={styles.studentInfo}>
-                <strong><span>Estudante: </span></strong>
+                <strong>
+                  <span>Estudante: </span>
+                </strong>
                 <span>{item.student}</span>
-                </div>
+              </div>
             </div>
           </div>
         </li>

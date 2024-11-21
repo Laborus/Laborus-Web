@@ -80,13 +80,13 @@ export default function ProfileSection() {
           </div>
           <div
             className={styles.dropdownItem}
-            onClick={() => navigate("/company")}
+            // onClick={() => navigate("/company")}
           >
             <FaRegBookmark /> Salvos
           </div>
           <div
             className={styles.dropdownItem}
-            onClick={() => navigate("/company")}
+            // onClick={() => navigate("/company")}
           >
             <IoSettingsOutline /> Configurações
           </div>

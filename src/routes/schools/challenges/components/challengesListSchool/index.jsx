@@ -15,11 +15,11 @@ export default function ChallengesListSchool({ items }) {
         {items.map((item) => (
           <li key={item.name} className={styles.submissionItem}>
             <div className={styles.userDetails}>
-              <img
+              {/* <img
                 src={item.image}
                 alt={item.name}
                 className={styles.userAvatar}
-              />
+              /> */}
               <div className={styles.submissionInfo}>
                 <h2 className={styles.submissionTitle}>{item.name}</h2>
                 <div className={styles.institutionInfo}>

@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './studentHighlight.module.css';
+import React from "react";
+import styles from "./studentHighlight.module.css";
 
 export default function StudentsHighlight({ title, icon, students }) {
   return (

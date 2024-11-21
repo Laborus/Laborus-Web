@@ -18,32 +18,32 @@ const challenges = [
 export default function SubmissionsSideBar() {
   return (
     <aside className={styles.profileContent}>
-      <div className={styles.coverPhoto}>
+      {/* <div className={styles.coverPhoto}>
         <img src="/post-example-2.jpeg" alt="Cover Photo" />
       </div>
-      <ProfileInfo />
+      <ProfileInfo /> */}
       <StudentsHighlight
-          title="Alunos destaques no seu Campus"
-          icon={<MdOutlineSchool />}
-          students={[
-            {
-              image: "/user-laborus.jpeg",
-              name: "Rogério Azevedo",
-              info: "125 pontos",
-            },
-            {
-              image: "/user-laborus.jpeg",
-              name: "Rogério Azevedo",
-              info: "125 pontos",
-            },
-            {
-              image: "/user-laborus.jpeg",
-              name: "Rogério Azevedo",
-              info: "125 pontos",
-            },
-          ]}
-        />
-      <ChallengesListSchool items={challenges}/>
+        title="Alunos destaques no seu Campus"
+        icon={<MdOutlineSchool />}
+        students={[
+          {
+            image: "/user-laborus.jpeg",
+            name: "Rogério Azevedo",
+            info: "125 pontos",
+          },
+          {
+            image: "/user-laborus.jpeg",
+            name: "Rogério Azevedo",
+            info: "120 pontos",
+          },
+          {
+            image: "/user-laborus.jpeg",
+            name: "Rogério Azevedo",
+            info: "115 pontos",
+          },
+        ]}
+      />
+      <ChallengesListSchool items={challenges} />
     </aside>
   );
 }
