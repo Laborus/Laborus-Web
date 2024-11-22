@@ -16,6 +16,7 @@ import HomePageCompany from "./routes/company/home";
 import JobsPageCompany from "./routes/company/job";
 import ProfileCompany from "./routes/company/profile";
 import ProfileSchool from "./routes/schools/profile";
+import ProfileStudent from "./routes/students/profile";
 
 export const createRoutesByRole = (role) => {
   switch (role) {
@@ -31,6 +32,7 @@ export const createRoutesByRole = (role) => {
           { path: "chats", element: <ChatPages /> },
           { path: "challenges", element: <ChallengesPage /> },
           { path: "notifications", element: <NotificationsPage /> },
+          { path: `/${role}/profile`, element: <ProfileStudent /> },
         ],
       };
     case "school":

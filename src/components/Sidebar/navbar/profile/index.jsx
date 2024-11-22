@@ -39,6 +39,9 @@ export default function ProfileSection() {
     } else if (currentPath.includes("company")) {
       // Redireciona para o perfil de company
       navigate("/company/profile");
+    } else if (currentPath.includes("student")) {
+      // Redireciona para o perfil de student
+      navigate("/student/profile");
     }
   };
 
