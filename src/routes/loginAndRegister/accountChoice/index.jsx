@@ -15,7 +15,7 @@ export default function AccountChoice() {
 
   const handleOptionClick = (value) => setSelectedOption(value);
   const handleSubmit = () => alert(`Opção selecionada: ${selectedOption}`);
-  const backButtonUrl = "/login"; // Pode ser alterado dinamicamente
+  const backButtonUrl = "/"; // Pode ser alterado dinamicamente
 
   return (
     <Container>

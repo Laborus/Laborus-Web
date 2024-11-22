@@ -64,7 +64,7 @@ export default function ProfileDetails() {
     }
   };
 
-  const backButtonUrl = "/home";
+  const backButtonUrl = "/";
 
   return (
     <Container>

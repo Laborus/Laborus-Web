@@ -60,7 +60,8 @@ export default function Login() {
           <SubmitButton disabled={!isFormValid || isLoading} />
 
           <p className={styles.registerLink}>
-            Não possui conta ainda? <a href="#">Cadastre-se.</a>
+            Não possui conta ainda?{" "}
+            <a href="/register/accountChoice">Cadastre-se.</a>
           </p>
         </form>
       </GroupBox>

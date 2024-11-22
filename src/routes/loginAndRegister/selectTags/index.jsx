@@ -50,7 +50,7 @@ export default function SelectTags() {
     <Container>
       <GroupBox>
         <Logo />
-        <BackButton href="#" />
+        <BackButton href="/" />
         <Title
           title="Selecione suas tags"
           details="Escolha 3 estilos/interesses que mais combinam com você - Poderá alterá-los mais tarde."

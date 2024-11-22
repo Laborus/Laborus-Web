@@ -36,7 +36,7 @@ export default function Password() {
     <Container>
       <GroupBox>
         <Logo />
-        <BackButton href="#" />
+        <BackButton href="/" />
         <Title
           title="Digite sua senha"
           details="Digite uma senha com no mínimo 8 caracteres."

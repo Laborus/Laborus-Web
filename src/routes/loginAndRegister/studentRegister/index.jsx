@@ -37,7 +37,7 @@ export default function Register() {
     <Container>
       <GroupBox>
         <Logo />
-        <BackButton href="#" />
+        <BackButton href="/" />
         <Title
           title="Junte-se a Laborus!"
           details="Cadastre-se na plataforma... É de graça."

@@ -58,7 +58,7 @@ export default function Contact() {
     <Container>
       <GroupBox>
         <Logo />
-        <BackButton href="#" />
+        <BackButton href="/" />
         <Title
           title="Links de Contato"
           details="Preencha os campos abaixo para adicionar os links de contato ao seu perfil."
