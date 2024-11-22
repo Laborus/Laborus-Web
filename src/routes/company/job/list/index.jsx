@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./style.module.css";
 import JobRow from "../item";
+import JobModal from "../modal";
 
 export default function JobList() {
   const [jobs, setJobs] = useState([
@@ -27,6 +28,7 @@ export default function JobList() {
   ]);
 
   const [selectedIds, setSelectedIds] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleSelect = (id) => {
     setSelectedIds((prevSelectedIds) =>
@@ -51,6 +53,11 @@ export default function JobList() {
     setSelectedIds([]);
   };
 
+  const handleAddJob = (newJob) => {
+    setJobs((prevJobs) => [...prevJobs, newJob]);
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.jobListContainer}>
       <header className={styles.header}>
@@ -61,8 +68,16 @@ export default function JobList() {
             type="text"
             placeholder="Pesquisar Vagas"
           />
-          <button className={styles.addButton}>+ Adicionar Nova</button>
-          <button className={styles.deleteAllButton} onClick={handleDeleteSelected}>
+          <button
+            className={styles.addButton}
+            onClick={() => setIsModalOpen(true)}
+          >
+            + Adicionar Nova
+          </button>
+          <button
+            className={styles.deleteAllButton}
+            onClick={handleDeleteSelected}
+          >
             Deletar Selecionadas
           </button>
         </div>
@@ -98,6 +113,9 @@ export default function JobList() {
           ))}
         </tbody>
       </table>
+      {isModalOpen && (
+        <JobModal onClose={() => setIsModalOpen(false)} onSave={handleAddJob} />
+      )}
     </div>
   );
 }
