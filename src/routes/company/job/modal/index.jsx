@@ -30,7 +30,12 @@ export default function JobModal({ onClose, onSave }) {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modal}>
-        <h2>Cadastrar Nova Vaga</h2>
+        <header className={styles.header}>
+          <h2>Cadastrar Nova Vaga</h2>
+          <button className={styles.closeButton} onClick={onClose}>
+            &times;
+          </button>
+        </header>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label>Título</label>
